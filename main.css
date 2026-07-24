@@ -1,0 +1,219 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Corinthia:wght@400;700&family=Gowun+Batang&display=swap');
+
+:root {
+  /* Background */
+  --bg: #fbfcf6;
+  --bg-soft: #f4f8f0;
+  --bg-card: #ffffff;
+
+  /* Primary */
+  --primary: #6fae9d;
+  --primary-light: #A8D8CC;
+  --primary-soft: #bdd8c3;
+  --primary-pale: #cfe7d3;
+
+  /* Border */
+  --border: #d8e6d7;
+  --divider: #e9f0e8;
+
+  /* Text */
+  --text-primary: #2f3b33;
+  --text-secondary: #5f6e63;
+  --text-tertiary: #8a988d;
+
+  /* Button */
+  --button-bg: var(--primary);
+  --button-hover: #82c690;
+  --button-text: #ffffff;
+
+  /* Shadow */
+  --shadow: rgba(67, 94, 73, 0.08);
+
+  /* Radius */
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-full: 999px;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+li {
+  list-style: none;
+}
+
+img {
+  width: 100%;
+  display: block;
+}
+
+body {
+  background: #fbfcf6;
+  font-family: "Gowun Batang", serif;
+  color: #4d4d4d;
+}
+
+/* wrap */
+.wrap {
+  width: 100%;
+  max-width: 430px;
+  margin: 0 auto;
+  border-right: 1px solid var(--border);
+  border-left: 1px solid var(--border);
+  overflow: hidden;
+}
+
+.flx {
+  display: flex;
+}
+
+.flx-col {
+  flex-direction: column;
+}
+
+.j-center {
+  justify-content: center;
+}
+
+.a-center {
+  align-items: center;
+}
+
+.main {
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+  padding-bottom: 60px;
+}
+
+.line1 {
+  transform: scaleX(-1) rotate(7deg);
+  position: absolute;
+  top: -10%;
+}
+
+/* .line2 {
+  position: absolute;
+  bottom: 0;
+} */
+
+.title {
+  font-family: "Corinthia", cursive;
+  font-size: 30px; 
+  color: var(--primary);
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+
+.flower-img {
+  width: 14px;
+  transform: rotate(30deg);
+  margin-top: 40px;
+}
+
+.wedding-img {
+  width: 100%;
+  max-width: 300px; 
+  margin: 0 auto;
+  position: relative;
+  margin-bottom: 24px;
+}
+
+.tape {
+  width: 60px;
+  transform: rotate(-45deg);
+  position: absolute;
+  z-index: 10;
+}
+
+.tape1 {
+  top: -10px;
+  left: -30px;
+}
+
+.tape2 {
+  bottom: -10px;
+  right: -30px;
+}
+
+.main-txt {
+  text-align: center;
+}
+
+.main-txt > p {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.main-txt > h2 {
+  font-size: 36px;
+  font-family: "Cinzel", serif;
+  color: var(--primary);
+  font-weight: 500;
+}
+
+.txt-line {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  margin: 24px auto;
+}
+
+.txt-line .straight {
+  width: 230px;
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(168, 216, 204, .2) 8%,
+    rgba(168, 216, 204, 1) 20%,
+    rgba(168, 216, 204, 1) 80%,
+    rgba(168, 216, 204, .2) 92%,
+    transparent
+  );
+}
+
+.txt-line .dia {
+  width: 6px;
+  height: 6px;
+  background: var(--primary-light);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.txt-date {
+  margin-bottom: 30px;
+}
+
+.txt-date h2 {
+  font-size: 20px;
+  margin-bottom: 4px;
+  font-weight: 600;
+}
+
+.txt-location i {
+  width: 20px;
+  height: 20px;
+  font-size: 20px;
+  color: var(--primary);
+}
+
+.txt-location h2 {
+  font-size: 16px;
+  margin-bottom: 2px;
+}
+
+.txt-location p {
+  font-size: 14px;
+}
