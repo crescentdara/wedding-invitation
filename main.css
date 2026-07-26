@@ -61,7 +61,7 @@ img {
 }
 
 body {
-  background: var(--bg);
+  /* background: var(--bg); */
   font-family: "Gowun Batang", serif;
   color: var(--text-primary);
 }
@@ -323,7 +323,7 @@ body {
 /* inviation */
 .inviation {
   position: relative;
-  min-height: 100vh;
+  /* min-height: 100vh; */
 }
 
 .invitation-bg img {
@@ -368,7 +368,7 @@ body {
   text-align: center;
   font-size: 15px;
   line-height: 1.6;
-  padding: 0 30px;
+  padding: 0 24px;
   color: var(--text-secondary);
 }
 
