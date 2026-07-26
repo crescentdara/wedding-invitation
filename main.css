@@ -102,6 +102,9 @@ body {
 
 /* loadingpage */
 .loading-page {
+  position: fixed;
+  inset: 0;
+  z-index: 500;
   width: 100%;
   height: 100vh;
   display: flex;
@@ -109,15 +112,61 @@ body {
   justify-content: center;
   align-items: center;
   text-align: center;
+  gap: 4px;
+  background: linear-gradient(180deg, var(--bg-soft), var(--bg));
 }
 
-.letter {
-  width: 60px;
+.loading-page .letter {
+  width: 56px;
+  margin-bottom: 6px;
+  animation: loadingFloat 2.2s ease-in-out infinite;
+}
+
+.loading-page > span {
+  font-family: "Cinzel", serif;
+  font-size: 12px;
+  letter-spacing: 3px;
+  color: var(--primary);
+  text-transform: uppercase;
 }
 
 .loading-img {
-  width: 70%;
+  width: 55%;
+  max-width: 180px;
   margin: 20px 0;
+}
+
+.loading-page p {
+  font-size: 14px;
+  color: var(--text-secondary);
+  letter-spacing: 0.5px;
+}
+
+.loading-dots {
+  display: flex;
+  gap: 6px;
+  margin-top: 18px;
+}
+
+.loading-dots span {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--primary-light);
+  animation: loadingDot 1.4s ease-in-out infinite;
+}
+
+.loading-dots span:nth-child(2) { animation-delay: 0.2s; }
+.loading-dots span:nth-child(3) { animation-delay: 0.4s; }
+
+@keyframes loadingFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes loadingDot {
+  0%, 80%, 100% { transform: scale(0.6); opacity: 0.4; }
+  40% { transform: scale(1); opacity: 1; }
 }
 
 /* main */
@@ -373,57 +422,6 @@ body {
   overflow: hidden;
   margin-bottom: 50px;
   margin-top: 20px;
-  padding: 20px 0;
-}
-
-.dateNloca .date2 .date2-cal {
-  width: 150%;
-  max-width: 800px;
-  min-width: 400px;
-  display: flex;
-}
-
-.dateNloca .date2 .date2-cal div {
-  flex: 1;
-  height: 87px;
-  border: 1px solid var(--primary-light);
-  border-right: 0;
-  padding: 10px;
-  position: relative;
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  font-size: 14px;
-  color: var(--text-secondary);
-  transform-origin: center bottom;
-}
-
-.dateNloca .date2 .date2-cal div:last-child {
-  border-right: 1px solid var(--primary-light);
-}
-
-.dateNloca .date2 .date2-cal div:nth-child(3) {
-  color: var(--primary);
-  font-weight: 700;
-  background: var(--bg-soft);
-}
-
-.dateNloca .date2 .date2-cal div::after,
-.dateNloca .date2 .date2-cal div::before {
-  content: "";
-  width: 1px;
-  height: 20px;
-  background: var(--primary-light);
-  position: absolute;
-  left: 0;
-}
-
-.dateNloca .date2 .date2-cal div::after {
-  top: -20px;
-}
-
-.dateNloca .date2 .date2-cal div::before {
-  bottom: -20px;
 }
 
 .date-txt {
@@ -530,13 +528,14 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 0;
 }
 
-.schedule-bg {
+/* .schedule-bg {
   position: absolute;
   inset: 0;
-  z-index: -1;
-}
+  z-index: 0;
+} */
 
 .schedule-bg img {
   width: 100%;
@@ -554,7 +553,7 @@ body {
 }
 
 .schedule-info {
-  position: relative;
+  position: absolute;
   inset: 0;
   top: 80px;
   flex: 1;
@@ -568,6 +567,7 @@ body {
 }
 
 .schedule-items {
+  flex: 1;
   position: relative;
   z-index: 1;
   margin: 0;
@@ -575,6 +575,9 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  display: flex;
+  flex-direction: column;
+  gap: 100px;
 }
 
 /* 스크롤에 따라 그려지는 중앙 물결선 */
@@ -589,8 +592,8 @@ body {
 
 .schedule-path-svg path {
   fill: none;
-  stroke: var(--gold);
-  stroke-width: 1.4;
+  stroke: var(--primary-light);
+  stroke-width: 1;
   stroke-linecap: round;
 }
 
@@ -611,7 +614,7 @@ body {
   align-items: center;
   justify-content: space-between;
   gap: 14px;
-  margin-bottom: 56px;
+  /* margin-bottom: 56px; */
 }
 
 .schedule-item:last-child {
@@ -629,10 +632,9 @@ body {
 
 .schedule-item .txt-box span {
   display: block;
-  font-family: "Cinzel", serif;
   font-size: 13px;
   letter-spacing: 1.5px;
-  color: var(--primary-light);
+  color: var(--primary);
   margin-bottom: 6px;
 }
 
@@ -660,7 +662,7 @@ body {
 }
 
 .ourmoments {
-  margin-top: 200px;
+  margin-top: 140px;
   padding: 0 20px;
 }
 
@@ -678,7 +680,6 @@ body {
   padding: 8px;
   position: relative;
   right: 0;
-  transform: rotate(8deg);
   box-shadow: 0 7px 12px rgba(0, 0, 0, 0.08);
 }
 
@@ -686,7 +687,6 @@ body {
   position: absolute;
   top: 0;
   left: 50%;
-  transform: rotate(0) translate(-50%);
   z-index: 10;
 }
 
@@ -694,7 +694,6 @@ body {
   position: absolute;
   top: 0;
   left: 0;
-  transform: rotate(-5deg);
   z-index: 0;
 }
 
@@ -777,6 +776,7 @@ body {
   width: 100%;
   max-width: 380px;
   max-height: 82vh;
+  overflow: hidden;     
   display: flex;
   flex-direction: column;
   background: var(--bg-card);
@@ -823,10 +823,13 @@ body {
 }
 
 .img-popup-item {
+  flex: 1 1 auto;  
+  min-height: 0;
   overflow-y: auto;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 12px;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: start;
+  gap: 10px;
   padding: 4px 4px 4px 0;
 }
 
@@ -840,6 +843,7 @@ body {
 }
 
 .img-popup-list {
+  width: calc(50% - 5px);
   aspect-ratio: 3 / 4;
   overflow: hidden;
   border-radius: var(--radius-sm);
@@ -1163,7 +1167,7 @@ body {
 
 /* thankyou - 마지막 인사 */
 .thankyou {
-  /* margin-top: 120px; */
+  margin-top: 120px;
   padding: 50px 24px;
   text-align: center;
   background: #fff;

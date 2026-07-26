@@ -17,6 +17,30 @@ gsap.ticker.add((time) => {
 gsap.ticker.lagSmoothing(0);
 
 /* ============================
+   0-1. 로딩 페이지 - 일정 시간 뒤 자연스럽게 사라짐
+============================ */
+function initLoadingPage() {
+  const loadingPage = document.querySelector(".loading-page");
+  if (!loadingPage) return;
+
+  document.body.style.overflow = "hidden";
+  lenis.stop();
+
+  gsap.to(loadingPage, {
+    opacity: 0,
+    duration: 0.8,
+    delay: 4.2, // 4.2초 대기 + 0.8초 페이드아웃 = 총 5초
+    ease: "power2.inOut",
+    onComplete: () => {
+      loadingPage.style.visibility = "hidden";
+      loadingPage.style.pointerEvents = "none";
+      document.body.style.overflow = "";
+      lenis.start();
+    },
+  });
+}
+
+/* ============================
    1. main 섹션 - 페이지 진입 애니메이션 (스크롤 X, 로드시 바로)
    주의: .from()은 "현재 스타일 -> from에 준 값" 이 아니라
    "from에 준 값 -> 현재(=최종) 스타일" 로 재생된다.
@@ -281,6 +305,37 @@ function initCountdown() {
 /* ============================
    6. 웨딩 사진첩 팝업 (2열 리스트 + 클릭시 슬라이드 뷰어)
 ============================ */
+function initOurMoments() {
+  const box1 = document.querySelector(".wedding-img-box:not(.wedding-img-box2):not(.wedding-img-box3)");
+  const box2 = document.querySelector(".wedding-img-box2");
+  const box3 = document.querySelector(".wedding-img-box3");
+  if (!box1 || !box2 || !box3) return;
+
+  gsap.set(box2, { xPercent: -50 }); // 기존 CSS의 translate(-50%) 대체 (센터 고정)
+
+  const tl = gsap.timeline({
+    scrollTrigger: { trigger: ".wedding-img-outer", start: "top 75%" },
+  });
+
+  tl.fromTo(
+      box2,
+      { scale: 0.8, opacity: 0, rotate: 0, xPercent: -50 },
+      { scale: 1, opacity: 1, rotate: 0, xPercent: -50, duration: 0.7, ease: "back.out(1.4)" }
+    )
+    .fromTo(
+      box1,
+      { x: -100, y: 10, rotate: 0, opacity: 0, scale: 0.85 },
+      { x: 0, y: 0, rotate: 8, opacity: 1, scale: 1, duration: 0.75, ease: "power2.out" },
+      "-=0.5"
+    )
+    .fromTo(
+      box3,
+      { x: 100, y: 10, rotate: 0, opacity: 0, scale: 0.85 },
+      { x: 0, y: 0, rotate: -5, opacity: 1, scale: 1, duration: 0.75, ease: "power2.out" },
+      "-=0.6"
+    );
+}
+
 function initImgPopup() {
   const openBtn = document.querySelector(".img-more-btn");
   const popup = document.querySelector(".img-popup");
@@ -521,89 +576,89 @@ function initHeartMoney() {
       실제 하객들끼리는 서로의 메시지를 못 봄.
       진짜 방명록으로 쓰려면 별도 서버/DB 연동이 필요함.
 ============================ */
-function initGuestbook() {
-  gsap.from(".guestbook .txt-title, .guestbook-desc, .guestbook-form", {
-    scrollTrigger: { trigger: ".guestbook", start: "top 82%" },
-    opacity: 0,
-    y: 20,
-    duration: 0.6,
-    stagger: 0.1,
-  });
+// function initGuestbook() {
+//   gsap.from(".guestbook .txt-title, .guestbook-desc, .guestbook-form", {
+//     scrollTrigger: { trigger: ".guestbook", start: "top 82%" },
+//     opacity: 0,
+//     y: 20,
+//     duration: 0.6,
+//     stagger: 0.1,
+//   });
 
-  const form = document.querySelector(".guestbook-form");
-  const nameInput = document.querySelector(".guestbook-name");
-  const msgInput = document.querySelector(".guestbook-msg");
-  const list = document.querySelector(".guestbook-list");
-  if (!form || !list) return;
+//   const form = document.querySelector(".guestbook-form");
+//   const nameInput = document.querySelector(".guestbook-name");
+//   const msgInput = document.querySelector(".guestbook-msg");
+//   const list = document.querySelector(".guestbook-list");
+//   if (!form || !list) return;
 
-  const STORAGE_KEY = "wedding_guestbook_messages";
+//   const STORAGE_KEY = "wedding_guestbook_messages";
 
-  function loadMessages() {
-    try {
-      return JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
-    } catch (e) {
-      return [];
-    }
-  }
+//   function loadMessages() {
+//     try {
+//       return JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
+//     } catch (e) {
+//       return [];
+//     }
+//   }
 
-  function saveMessages(messages) {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(messages));
-  }
+//   function saveMessages(messages) {
+//     localStorage.setItem(STORAGE_KEY, JSON.stringify(messages));
+//   }
 
-  function formatDate(timestamp) {
-    const d = new Date(timestamp);
-    return `${d.getFullYear()}.${String(d.getMonth() + 1).padStart(2, "0")}.${String(d.getDate()).padStart(2, "0")}`;
-  }
+//   function formatDate(timestamp) {
+//     const d = new Date(timestamp);
+//     return `${d.getFullYear()}.${String(d.getMonth() + 1).padStart(2, "0")}.${String(d.getDate()).padStart(2, "0")}`;
+//   }
 
-  function createItem(entry) {
-    const li = document.createElement("li");
-    li.className = "guestbook-item";
-    li.innerHTML = `
-      <div class="guestbook-item-head">
-        <span class="guestbook-item-name"></span>
-        <span class="guestbook-item-date">${formatDate(entry.date)}</span>
-      </div>
-      <p class="guestbook-item-msg"></p>
-    `;
-    li.querySelector(".guestbook-item-name").textContent = entry.name;
-    li.querySelector(".guestbook-item-msg").textContent = entry.msg;
-    return li;
-  }
+//   function createItem(entry) {
+//     const li = document.createElement("li");
+//     li.className = "guestbook-item";
+//     li.innerHTML = `
+//       <div class="guestbook-item-head">
+//         <span class="guestbook-item-name"></span>
+//         <span class="guestbook-item-date">${formatDate(entry.date)}</span>
+//       </div>
+//       <p class="guestbook-item-msg"></p>
+//     `;
+//     li.querySelector(".guestbook-item-name").textContent = entry.name;
+//     li.querySelector(".guestbook-item-msg").textContent = entry.msg;
+//     return li;
+//   }
 
-  function renderAll() {
-    const messages = loadMessages();
-    list.innerHTML = "";
-    if (messages.length === 0) {
-      const empty = document.createElement("li");
-      empty.className = "guestbook-empty";
-      empty.textContent = "아직 남겨진 메시지가 없어요. 첫 축하 인사를 남겨주세요!";
-      list.appendChild(empty);
-      return;
-    }
-    messages
-      .slice()
-      .reverse()
-      .forEach((entry) => list.appendChild(createItem(entry)));
-  }
+//   function renderAll() {
+//     const messages = loadMessages();
+//     list.innerHTML = "";
+//     if (messages.length === 0) {
+//       const empty = document.createElement("li");
+//       empty.className = "guestbook-empty";
+//       empty.textContent = "아직 남겨진 메시지가 없어요. 첫 축하 인사를 남겨주세요!";
+//       list.appendChild(empty);
+//       return;
+//     }
+//     messages
+//       .slice()
+//       .reverse()
+//       .forEach((entry) => list.appendChild(createItem(entry)));
+//   }
 
-  form.addEventListener("submit", (e) => {
-    e.preventDefault();
-    const name = nameInput.value.trim();
-    const msg = msgInput.value.trim();
-    if (!name || !msg) return;
+//   form.addEventListener("submit", (e) => {
+//     e.preventDefault();
+//     const name = nameInput.value.trim();
+//     const msg = msgInput.value.trim();
+//     if (!name || !msg) return;
 
-    const messages = loadMessages();
-    messages.push({ name, msg, date: Date.now() });
-    saveMessages(messages);
+//     const messages = loadMessages();
+//     messages.push({ name, msg, date: Date.now() });
+//     saveMessages(messages);
 
-    renderAll();
-    gsap.from(list.firstElementChild, { opacity: 0, y: -12, duration: 0.4, ease: "power2.out" });
+//     renderAll();
+//     gsap.from(list.firstElementChild, { opacity: 0, y: -12, duration: 0.4, ease: "power2.out" });
 
-    form.reset();
-  });
+//     form.reset();
+//   });
 
-  renderAll();
-}
+//   renderAll();
+// }
 
 /* ============================
    9. thankyou 섹션
@@ -620,6 +675,7 @@ function initThankYou() {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
+  initLoadingPage();
   initMainSection();
   initInvitationSection();
   initDateLocaSection();
@@ -627,6 +683,6 @@ document.addEventListener("DOMContentLoaded", () => {
   initCountdown();
   initImgPopup();
   initHeartMoney();
-  initGuestbook();
+  initOurMoments(); 
   initThankYou();
 });
