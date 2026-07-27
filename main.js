@@ -70,7 +70,7 @@ function initMainSection() {
 ============================ */
 function initInvitationSection() {
   const trigger = {
-    trigger: ".inviation",
+    trigger: ".invitation",
     start: "top 75%",
   };
 
@@ -161,14 +161,17 @@ function initDateLocaSection() {
     stagger: 0.1,
   });
 
-  gsap.from(".date2-cal > div", {
-    scrollTrigger: { trigger: ".date2", start: "top 80%" },
-    opacity: 0,
-    scaleY: 0,
-    duration: 0.5,
-    stagger: 0.12,
-    ease: "power2.out",
-  });
+  gsap.from(".date2 img", {
+  scrollTrigger: {
+    trigger: ".date2",
+    start: "top 80%",
+  },
+  opacity: 0,
+  scale: 0.9,
+  y: 20,
+  duration: 0.6,
+  ease: "power2.out",
+});
 
   const countTl = gsap.timeline({
     scrollTrigger: { trigger: ".date-txt", start: "top 85%" },

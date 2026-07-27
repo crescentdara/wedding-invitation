@@ -1,1191 +1,436 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ko">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
-  <title>박지현 ♥ 조예진 결혼합니다</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta property="og:title" content="박지현 ♥ 조예진 결혼합니다" />
-  <meta property="og:description" content="2026년 8월 15일 토요일 낮 12시 · 목화웨딩컨벤션 (부산 연제구)" />
+  <meta
+  property="og:description"
+  content="2026년 10월 10일 토요일 오후 1시 30분 · W웨딩 목화웨딩컨벤션"
+/>
+  <title>박지현 ♥ 조예진 결혼합니다</title>
+  <link rel="stylesheet" href="./main.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet" />
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    :root {
-      --ivory:    #FAF7F1;
-      --cream:    #F5EDE0;
-      --blush:    #EED5CC;
-      --petal:    #E0A89E;
-      --rose:     #C07870;
-      --deep-rose:#8C4A44;
-      --sage:     #8EAA8A;
-      --leaf:     #5E7E5C;
-      --gold:     #B8914E;
-      --lgold:    #D4B06A;
-      --champagne:#EDD9A8;
-      --dark:     #2E2020;
-      --muted:    #6A5050;
-      --border:   rgba(184,145,78,.35);
-    }
-
-    html { scroll-behavior: smooth; }
-
-    body {
-      background: var(--ivory);
-      color: var(--dark);
-      font-family: 'Nanum Myeongjo', serif;
-      max-width: 480px;
-      margin: 0 auto;
-      overflow-x: hidden;
-    }
-
-    /* ── 공통 ── */
-    section { padding: 64px 28px; position: relative; overflow: hidden; }
-
-    .en {
-      font-family: 'Cormorant Garamond', serif;
-      font-style: italic;
-    }
-
-    .gold-line {
-      width: 60px; height: 1px;
-      background: linear-gradient(90deg, transparent, var(--gold), transparent);
-      margin: 18px auto;
-    }
-
-    .gold-line-full {
-      width: 100%; height: 1px;
-      background: linear-gradient(90deg, transparent, var(--border), transparent);
-      margin: 20px 0;
-    }
-
-    .sec-label {
-      font-family: 'Cormorant Garamond', serif;
-      font-style: italic;
-      font-size: 13px;
-      letter-spacing: .28em;
-      color: var(--gold);
-      text-align: center;
-      display: block;
-      margin-bottom: 10px;
-    }
-
-    .sec-title {
-      font-family: 'Nanum Myeongjo', serif;
-      font-weight: 800;
-      font-size: 24px;
-      line-height: 1.5;
-      text-align: center;
-      margin-bottom: 6px;
-    }
-
-    /* ══════════════════════════════════
-       HERO
-    ══════════════════════════════════ */
-    .hero {
-      min-height: 100svh;
-      background: var(--ivory);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 60px 28px 80px;
-      position: relative;
-      overflow: hidden;
-    }
-
-    /* 코너 보태니컬 */
-    .floral-tl { position: absolute; top: 0; left: 0;  width: 200px; opacity: .88; }
-    .floral-br { position: absolute; bottom: 0; right: 0; width: 185px; opacity: .88; transform: rotate(180deg); }
-    .floral-tr { position: absolute; top: 0; right: 0; width: 120px; opacity: .55; transform: scaleX(-1); }
-    .floral-bl { position: absolute; bottom: 0; left: 0; width: 110px; opacity: .5;  transform: scaleY(-1) scaleX(-1) rotate(180deg); }
-
-    .hero-inner {
-      position: relative;
-      z-index: 2;
-      text-align: center;
-      width: 100%;
-    }
-
-    .hero-en {
-      font-family: 'Cormorant Garamond', serif;
-      font-style: italic;
-      font-size: 13px;
-      letter-spacing: .3em;
-      color: var(--gold);
-      margin-bottom: 20px;
-    }
-
-    .hero-names {
-      font-family: 'Nanum Myeongjo', serif;
-      font-weight: 800;
-      font-size: 48px;
-      line-height: 1.2;
-      letter-spacing: -.01em;
-      color: var(--dark);
-    }
-
-    .hero-and {
-      font-family: 'Cormorant Garamond', serif;
-      font-style: italic;
-      font-size: 36px;
-      color: var(--petal);
-      display: block;
-      margin: 6px 0;
-      animation: pulse 2.4s ease-in-out infinite;
-    }
-
-    .hero-rule {
-      width: 100%;
-      height: 1px;
-      background: linear-gradient(90deg, transparent 0%, var(--border) 30%, var(--gold) 50%, var(--border) 70%, transparent 100%);
-      margin: 22px auto;
-      max-width: 280px;
-    }
-
-    .hero-date {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 16px;
-      letter-spacing: .2em;
-      color: var(--muted);
-    }
-
-    .hero-venue {
-      font-size: 13px;
-      color: #9A8080;
-      margin-top: 6px;
-      letter-spacing: .05em;
-    }
-
-    .scroll-hint {
-      position: absolute;
-      bottom: 28px;
-      left: 50%;
-      transform: translateX(-50%);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 7px;
-      font-family: 'Cormorant Garamond', serif;
-      font-style: italic;
-      font-size: 11px;
-      letter-spacing: .2em;
-      color: #B8A090;
-      animation: fadeScroll 2s ease-in-out infinite;
-      z-index: 3;
-    }
-
-    .scroll-hint::after {
-      content: '';
-      width: 1px;
-      height: 32px;
-      background: linear-gradient(to bottom, var(--petal), transparent);
-    }
-
-    /* ══════════════════════════════════
-       INVITATION
-    ══════════════════════════════════ */
-    .invite-section {
-      background: white;
-      text-align: center;
-    }
-
-    .invite-deco { position: absolute; opacity: .18; }
-    .invite-deco-tl { top: -10px; left: -10px; width: 130px; }
-    .invite-deco-br { bottom: -10px; right: -10px; width: 130px; transform: rotate(180deg); }
-
-    .invite-frame {
-      position: relative;
-      z-index: 2;
-      border: 1px solid var(--border);
-      border-radius: 2px;
-      padding: 36px 22px;
-    }
-
-    .invite-frame::before,
-    .invite-frame::after {
-      content: '';
-      position: absolute;
-      width: 16px; height: 16px;
-      border-color: var(--gold);
-      border-style: solid;
-    }
-
-    .invite-frame::before {
-      top: 6px; left: 6px;
-      border-width: 1px 0 0 1px;
-    }
-
-    .invite-frame::after {
-      bottom: 6px; right: 6px;
-      border-width: 0 1px 1px 0;
-    }
-
-    .invite-title {
-      font-size: 20px;
-      font-weight: 700;
-      line-height: 1.75;
-      margin-bottom: 18px;
-      color: var(--dark);
-    }
-
-    .invite-body {
-      font-size: 14px;
-      line-height: 2.2;
-      color: var(--muted);
-    }
-
-    .family-row {
-      display: flex;
-      margin-top: 28px;
-      padding-top: 22px;
-      border-top: 1px solid rgba(184,145,78,.2);
-    }
-
-    .family-col {
-      flex: 1;
-      font-size: 13px;
-      line-height: 2;
-      color: #7A6060;
-      text-align: center;
-      padding: 0 10px;
-    }
-
-    .family-col:first-child {
-      border-right: 1px solid rgba(184,145,78,.2);
-    }
-
-    .f-badge {
-      display: inline-block;
-      font-family: 'Cormorant Garamond', serif;
-      font-style: italic;
-      font-size: 11px;
-      letter-spacing: .15em;
-      color: var(--gold);
-      margin-bottom: 6px;
-    }
-
-    .family-col strong { font-size: 15px; color: var(--dark); display: block; }
-
-    /* ══════════════════════════════════
-       D-DAY
-    ══════════════════════════════════ */
-    .dday-section {
-      background: linear-gradient(160deg, #3C2420 0%, #5C3030 50%, #3C2828 100%);
-      text-align: center;
-      padding: 72px 28px;
-    }
-
-    .dday-num {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 100px;
-      font-weight: 300;
-      color: var(--champagne);
-      line-height: 1;
-      letter-spacing: -.02em;
-    }
-
-    .dday-sub {
-      font-family: 'Cormorant Garamond', serif;
-      font-style: italic;
-      font-size: 16px;
-      color: rgba(237,217,168,.65);
-      margin-top: 10px;
-      letter-spacing: .12em;
-    }
-
-    /* ══════════════════════════════════
-       DATE & VENUE
-    ══════════════════════════════════ */
-    .info-section { background: var(--ivory); }
-
-    .info-item {
-      display: flex;
-      align-items: flex-start;
-      gap: 18px;
-      padding: 20px 0;
-      border-bottom: 1px solid rgba(184,145,78,.15);
-    }
-
-    .info-item:last-child { border-bottom: none; }
-
-    .info-icon {
-      width: 40px; height: 40px;
-      border: 1px solid var(--border);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 16px;
-      flex-shrink: 0;
-      background: white;
-      color: var(--gold);
-    }
-
-    .info-text strong {
-      display: block;
-      font-family: 'Cormorant Garamond', serif;
-      font-style: italic;
-      font-size: 12px;
-      letter-spacing: .18em;
-      color: var(--gold);
-      margin-bottom: 4px;
-    }
-
-    .info-text p { font-size: 15px; font-weight: 700; line-height: 1.5; }
-    .info-text small { font-size: 12px; color: #9A8888; }
-
-    /* ══════════════════════════════════
-       GALLERY
-    ══════════════════════════════════ */
-    .gallery-section {
-      background: var(--cream);
-      padding: 64px 0;
-    }
-
-    .gallery-section .sec-label,
-    .gallery-section .sec-title,
-    .gallery-section .gold-line { padding: 0 28px; }
-
-    .gallery-scroll {
-      display: flex;
-      gap: 14px;
-      padding: 20px 28px 10px;
-      overflow-x: auto;
-      scrollbar-width: none;
-      -webkit-overflow-scrolling: touch;
-    }
-
-    .gallery-scroll::-webkit-scrollbar { display: none; }
-
-    .gallery-item {
-      flex-shrink: 0;
-      width: 190px; height: 250px;
-      border-radius: 2px;
-      overflow: hidden;
-      background: white;
-      border: 1px solid var(--border);
-      position: relative;
-    }
-
-    /* 사진 위 얇은 금색 테두리 */
-    .gallery-item::after {
-      content: '';
-      position: absolute;
-      inset: 5px;
-      border: 1px solid rgba(184,145,78,.25);
-      pointer-events: none;
-    }
-
-    .gallery-item img { width: 100%; height: 100%; object-fit: cover; display: block; }
-
-    .gallery-placeholder {
-      width: 100%; height: 100%;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      color: #C8B0A8;
-      font-size: 13px;
-      letter-spacing: .08em;
-      background: #FBF6F0;
-    }
-
-    .gallery-placeholder svg { opacity: .35; }
-
-    /* ══════════════════════════════════
-       MAP
-    ══════════════════════════════════ */
-    .map-section { background: white; }
-
-    .map-frame {
-      width: 100%; height: 230px;
-      border: 1px solid var(--border);
-      border-radius: 2px;
-      overflow: hidden;
-      margin: 18px 0;
-    }
-
-    .map-frame iframe { width: 100%; height: 100%; border: none; display: block; }
-
-    .map-btns { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-
-    .map-btn {
-      display: block;
-      text-align: center;
-      text-decoration: none;
-      padding: 12px;
-      font-family: 'Nanum Myeongjo', serif;
-      font-size: 13px;
-      border: 1px solid var(--border);
-      border-radius: 2px;
-      color: var(--muted);
-      background: white;
-      transition: all .2s;
-      letter-spacing: .04em;
-    }
-
-    .map-btn:hover, .map-btn:active {
-      background: var(--cream);
-      border-color: var(--gold);
-      color: var(--dark);
-    }
-
-    /* ══════════════════════════════════
-       RSVP
-    ══════════════════════════════════ */
-    .rsvp-section {
-      background: var(--cream);
-      text-align: center;
-      position: relative;
-    }
-
-    .rsvp-section .sec-label { color: var(--rose); }
-
-    .rsvp-desc {
-      font-size: 14px;
-      color: var(--muted);
-      line-height: 2.1;
-      margin-bottom: 28px;
-    }
-
-    .rsvp-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      background: var(--dark);
-      color: var(--champagne);
-      text-decoration: none;
-      border-radius: 2px;
-      padding: 15px 36px;
-      font-family: 'Nanum Myeongjo', serif;
-      font-size: 15px;
-      letter-spacing: .06em;
-      transition: opacity .2s;
-    }
-
-    .rsvp-btn:active { opacity: .85; }
-
-    .rsvp-note {
-      margin-top: 16px;
-      font-family: 'Cormorant Garamond', serif;
-      font-style: italic;
-      font-size: 13px;
-      color: #B09090;
-      line-height: 2;
-    }
-
-    /* ══════════════════════════════════
-       CONTACT
-    ══════════════════════════════════ */
-    .contact-section { background: var(--ivory); }
-
-    .contact-group { margin-bottom: 30px; }
-
-    .contact-group-title {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      margin-bottom: 14px;
-    }
-
-    .contact-group-title span {
-      font-family: 'Cormorant Garamond', serif;
-      font-style: italic;
-      font-size: 13px;
-      letter-spacing: .2em;
-      color: var(--gold);
-      white-space: nowrap;
-    }
-
-    .contact-group-title::after {
-      content: '';
-      flex: 1;
-      height: 1px;
-      background: linear-gradient(to right, var(--border), transparent);
-    }
-
-    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-
-    .contact-card {
-      background: white;
-      border: 1px solid var(--border);
-      border-radius: 2px;
-      padding: 16px 12px;
-      text-align: center;
-    }
-
-    .contact-card.full { grid-column: 1 / -1; }
-    .contact-card.full .btn-row { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
-
-    .contact-card .who {
-      font-family: 'Cormorant Garamond', serif;
-      font-style: italic;
-      font-size: 11px;
-      letter-spacing: .15em;
-      color: var(--gold);
-      margin-bottom: 4px;
-    }
-
-    .contact-card .name {
-      font-size: 16px;
-      font-weight: 700;
-      margin-bottom: 12px;
-    }
-
-    .contact-card a {
-      display: block;
-      padding: 8px;
-      border: 1px solid rgba(184,145,78,.3);
-      border-radius: 2px;
-      color: var(--muted);
-      text-decoration: none;
-      font-size: 12px;
-      margin-bottom: 6px;
-      transition: all .18s;
-      background: #FEFAF6;
-    }
-
-    .contact-card a:last-child { margin-bottom: 0; }
-    .contact-card a:active { background: var(--cream); border-color: var(--gold); }
-
-    /* ══════════════════════════════════
-       ACCOUNT
-    ══════════════════════════════════ */
-    .account-section { background: white; }
-
-    .account-accordion {
-      border: 1px solid var(--border);
-      border-radius: 2px;
-      overflow: hidden;
-      margin-bottom: 10px;
-    }
-
-    .account-header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 16px 18px;
-      cursor: pointer;
-      user-select: none;
-      background: #FEFAF6;
-      font-size: 14px;
-      letter-spacing: .04em;
-    }
-
-    .account-header .chevron {
-      font-size: 11px;
-      color: var(--gold);
-      transition: transform .2s;
-    }
-
-    .account-header.open .chevron { transform: rotate(180deg); }
-
-    .account-body { display: none; padding: 0 18px 16px; border-top: 1px solid rgba(184,145,78,.18); }
-    .account-body.open { display: block; }
-
-    .account-row {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 12px 0;
-      border-bottom: 1px solid rgba(184,145,78,.1);
-    }
-
-    .account-row:last-child { border-bottom: none; }
-    .account-row .bank   { font-size: 11px; color: #B0A0A0; margin-bottom: 2px; }
-    .account-row .num    { font-size: 14px; font-weight: 700; }
-    .account-row .holder { font-size: 12px; color: #B0A0A0; margin-top: 2px; }
-
-    .copy-btn {
-      flex-shrink: 0;
-      padding: 6px 14px;
-      background: white;
-      border: 1px solid var(--border);
-      border-radius: 2px;
-      font-family: 'Nanum Myeongjo', serif;
-      font-size: 12px;
-      color: var(--gold);
-      cursor: pointer;
-      letter-spacing: .06em;
-      transition: all .18s;
-    }
-
-    .copy-btn:active { background: var(--cream); }
-
-    /* ══════════════════════════════════
-       FOOTER
-    ══════════════════════════════════ */
-    footer {
-      background: linear-gradient(160deg, #2E1A1A 0%, #3E2222 60%, #2A1818 100%);
-      padding: 60px 28px;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .footer-floral {
-      position: absolute;
-      opacity: .12;
-    }
-
-    .footer-floral-tl { top: -10px; left: -10px; width: 140px; }
-    .footer-floral-br { bottom: -10px; right: -10px; width: 140px; transform: rotate(180deg); }
-
-    .footer-inner { position: relative; z-index: 2; }
-
-    .footer-en {
-      font-family: 'Cormorant Garamond', serif;
-      font-style: italic;
-      font-size: 13px;
-      letter-spacing: .25em;
-      color: rgba(237,217,168,.55);
-      margin-bottom: 14px;
-    }
-
-    .footer-names {
-      font-family: 'Nanum Myeongjo', serif;
-      font-weight: 800;
-      font-size: 26px;
-      color: var(--champagne);
-      letter-spacing: .05em;
-    }
-
-    .footer-heart {
-      font-size: 18px;
-      color: var(--petal);
-      margin: 0 8px;
-    }
-
-    .footer-rule {
-      width: 60px; height: 1px;
-      background: linear-gradient(90deg, transparent, rgba(184,145,78,.6), transparent);
-      margin: 18px auto;
-    }
-
-    .footer-date {
-      font-family: 'Cormorant Garamond', serif;
-      font-style: italic;
-      font-size: 14px;
-      color: rgba(237,217,168,.5);
-      letter-spacing: .15em;
-      line-height: 2;
-    }
-
-    /* ══════════════════════════════════
-       TOAST
-    ══════════════════════════════════ */
-    .toast {
-      position: fixed;
-      bottom: 36px;
-      left: 50%;
-      transform: translateX(-50%) translateY(16px);
-      background: var(--dark);
-      color: var(--champagne);
-      padding: 10px 22px;
-      border-radius: 2px;
-      font-size: 13px;
-      opacity: 0;
-      transition: all .3s;
-      pointer-events: none;
-      z-index: 999;
-      white-space: nowrap;
-      border: 1px solid rgba(184,145,78,.4);
-      letter-spacing: .05em;
-    }
-
-    .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
-
-    /* ══════════════════════════════════
-       ANIMATIONS
-    ══════════════════════════════════ */
-    @keyframes pulse {
-      0%,100% { transform: scale(1); opacity: 1; }
-      50%      { transform: scale(1.06); opacity: .85; }
-    }
-
-    @keyframes fadeScroll {
-      0%,100% { opacity: .6; transform: translateX(-50%) translateY(0); }
-      50%      { opacity: 1;  transform: translateX(-50%) translateY(6px); }
-    }
-
-    .fade-in {
-      opacity: 0;
-      transform: translateY(20px);
-      transition: opacity .8s ease, transform .8s ease;
-    }
-
-    .fade-in.visible { opacity: 1; transform: none; }
-  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
 </head>
+
 <body>
-
-<!-- ══════════════════════════════════
-     HERO
-══════════════════════════════════ -->
-<section class="hero">
-
-  <!-- 코너 보태니컬 SVG — 장미/모란/잎 -->
-
-  <!-- 좌상단 메인 -->
-  <svg class="floral-tl" viewBox="0 0 200 220" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <!-- 줄기 -->
-    <path d="M15 15 Q30 50 45 100 Q55 140 60 200" stroke="#6A8A5A" stroke-width="1.4" fill="none"/>
-    <path d="M30 45 Q60 30 90 15 Q115 5 140 2" stroke="#6A8A5A" stroke-width="1" fill="none"/>
-    <path d="M42 90 Q65 75 88 65 Q105 58 120 55" stroke="#6A8A5A" stroke-width=".9" fill="none"/>
-    <!-- 잎들 -->
-    <path d="M25 55 Q8 48 4 32 Q12 42 25 55Z" fill="#8FAF80"/>
-    <path d="M35 75 Q50 65 54 50 Q42 62 35 75Z" fill="#6A8A5A"/>
-    <path d="M44 105 Q28 100 22 86 Q32 95 44 105Z" fill="#8FAF80"/>
-    <path d="M50 130 Q65 120 68 106 Q55 118 50 130Z" fill="#6A8A5A"/>
-    <path d="M54 158 Q38 155 34 140 Q44 150 54 158Z" fill="#8FAF80"/>
-    <!-- 메인 장미 (큰) -->
-    <path d="M82 24 Q65 18 60 30 Q56 44 67 54 Q80 64 94 56 Q106 47 102 33 Q98 20 82 24Z" fill="#E0A898"/>
-    <path d="M82 30 Q69 25 66 36 Q63 48 73 55 Q82 62 92 55 Q100 47 97 36 Q94 26 82 30Z" fill="#D09080"/>
-    <path d="M82 36 Q73 33 71 42 Q69 52 77 57 Q83 61 89 55 Q95 48 92 39 Q89 32 82 36Z" fill="#C08070"/>
-    <path d="M82 42 Q77 40 76 47 Q75 55 80 58 Q84 60 87 55 Q91 50 88 44 Q86 39 82 42Z" fill="#A86858"/>
-    <circle cx="82" cy="50" r="4" fill="#7A4840"/>
-    <!-- 장미 잎 -->
-    <path d="M60 30 Q44 25 38 14 Q50 22 60 30Z" fill="#8FAF80"/>
-    <path d="M96 56 Q108 60 115 72 Q103 62 96 56Z" fill="#6A8A5A"/>
-    <path d="M67 54 Q58 68 55 80 Q62 68 67 54Z" fill="#8FAF80"/>
-    <!-- 작은 장미 1 -->
-    <path d="M120 12 Q108 8 106 17 Q104 27 113 32 Q122 36 130 29 Q136 21 130 13 Q127 7 120 12Z" fill="#EAB8AE"/>
-    <path d="M120 17 Q112 14 111 22 Q110 30 117 34 Q124 37 129 30 Q133 23 128 17 Q125 12 120 17Z" fill="#D9A098"/>
-    <circle cx="120" cy="26" r="3.5" fill="#B07868"/>
-    <!-- 작은 장미 잎 -->
-    <path d="M106 17 Q96 12 92 4 Q100 11 106 17Z" fill="#8FAF80"/>
-    <path d="M130 29 Q140 30 148 24 Q138 26 130 29Z" fill="#6A8A5A"/>
-    <!-- 꽃봉오리 -->
-    <path d="M108 60 Q102 57 100 63 Q99 70 104 73 Q110 75 114 68 Q116 62 112 58 Q110 56 108 60Z" fill="#EABCB0"/>
-    <path d="M108 63 Q104 61 103 66 Q102 72 107 74 Q111 75 113 69 Q114 64 111 61 Q109 59 108 63Z" fill="#D9A898"/>
-    <!-- 작은 꽃잎들 (흩뿌려진) -->
-    <path d="M155 8 Q150 11 152 16 Q157 17 159 12Z" fill="#EABCB0" opacity=".7"/>
-    <path d="M170 18 Q165 22 167 27 Q172 27 173 21Z" fill="#E0A898" opacity=".6"/>
-    <path d="M185 5 Q181 8 183 13 Q187 13 188 8Z" fill="#EAC0B4" opacity=".65"/>
-    <!-- 하단 잎/줄기 -->
-    <path d="M58 175 Q42 172 36 158 Q47 167 58 175Z" fill="#8FAF80"/>
-    <path d="M62 195 Q74 188 76 175 Q65 184 62 195Z" fill="#6A8A5A"/>
-  </svg>
-
-  <!-- 우상단 작은 장식 -->
-  <svg class="floral-tr" viewBox="0 0 120 130" fill="none">
-    <path d="M110 10 Q95 15 85 30 Q78 45 85 60" stroke="#6A8A5A" stroke-width="1" fill="none"/>
-    <path d="M92 20 Q80 14 74 4 Q82 14 92 20Z" fill="#8FAF80"/>
-    <path d="M88 38 Q102 32 108 20 Q96 30 88 38Z" fill="#6A8A5A"/>
-    <path d="M80 38 Q66 32 62 18 Q65 25 68 28 Q72 34 80 38Z" fill="#EAB8AE"/>
-    <path d="M80 43 Q70 39 68 47 Q66 56 74 60 Q81 63 87 55 Q91 48 86 42Z" fill="#D9A098"/>
-    <circle cx="78" cy="51" r="3.5" fill="#B07868"/>
-    <path d="M62 18 Q54 10 52 2 Q58 10 62 18Z" fill="#8FAF80"/>
-  </svg>
-
-  <!-- 우하단 장식 (rotate 180) -->
-  <svg class="floral-br" viewBox="0 0 200 220" fill="none">
-    <path d="M15 15 Q30 50 45 100 Q55 140 60 200" stroke="#6A8A5A" stroke-width="1.4" fill="none"/>
-    <path d="M30 45 Q60 30 90 15 Q115 5 140 2" stroke="#6A8A5A" stroke-width="1" fill="none"/>
-    <path d="M25 55 Q8 48 4 32 Q12 42 25 55Z" fill="#8FAF80"/>
-    <path d="M35 75 Q50 65 54 50 Q42 62 35 75Z" fill="#6A8A5A"/>
-    <path d="M44 105 Q28 100 22 86 Q32 95 44 105Z" fill="#8FAF80"/>
-    <path d="M82 24 Q65 18 60 30 Q56 44 67 54 Q80 64 94 56 Q106 47 102 33 Q98 20 82 24Z" fill="#E0A898"/>
-    <path d="M82 30 Q69 25 66 36 Q63 48 73 55 Q82 62 92 55 Q100 47 97 36 Q94 26 82 30Z" fill="#D09080"/>
-    <path d="M82 36 Q73 33 71 42 Q69 52 77 57 Q83 61 89 55 Q95 48 92 39 Q89 32 82 36Z" fill="#C08070"/>
-    <circle cx="82" cy="50" r="4" fill="#7A4840"/>
-    <path d="M60 30 Q44 25 38 14 Q50 22 60 30Z" fill="#8FAF80"/>
-    <path d="M120 12 Q108 8 106 17 Q104 27 113 32 Q122 36 130 29 Q136 21 130 13 Q127 7 120 12Z" fill="#EAB8AE"/>
-    <path d="M120 17 Q112 14 111 22 Q110 30 117 34 Q124 37 129 30 Q133 23 128 17 Q125 12 120 17Z" fill="#D9A098"/>
-    <circle cx="120" cy="26" r="3.5" fill="#B07868"/>
-    <path d="M155 8 Q150 11 152 16 Q157 17 159 12Z" fill="#EABCB0" opacity=".7"/>
-    <path d="M170 18 Q165 22 167 27 Q172 27 173 21Z" fill="#E0A898" opacity=".6"/>
-  </svg>
-
-  <div class="hero-inner">
-    <p class="hero-en">We are getting married</p>
-    <div class="hero-names">
-      박지현<span class="hero-and">♥</span>조예진
-    </div>
-    <div class="hero-rule"></div>
-    <p class="hero-date">2026 · 08 · 15 · SAT</p>
-    <p class="hero-venue">목화웨딩컨벤션 · 부산 연제구</p>
-  </div>
-
-  <div class="scroll-hint">scroll</div>
-</section>
-
-
-<!-- ══════════════════════════════════
-     INVITATION
-══════════════════════════════════ -->
-<section class="invite-section fade-in">
-  <!-- 코너 장식 -->
-  <svg class="invite-deco invite-deco-tl" viewBox="0 0 130 130" fill="none">
-    <path d="M5 5 Q20 30 35 65 Q45 90 50 125" stroke="#6A8A5A" stroke-width="1" fill="none"/>
-    <path d="M5 5 Q30 10 65 18 Q90 24 125 28" stroke="#6A8A5A" stroke-width=".8" fill="none"/>
-    <path d="M18 32 Q8 26 4 15 Q11 24 18 32Z" fill="#8FAF80"/>
-    <path d="M30 55 Q42 48 46 36 Q36 46 30 55Z" fill="#6A8A5A"/>
-    <path d="M50 38 Q38 32 35 20 Q38 25 42 30 Q46 34 50 38Z" fill="#EAB8AE"/>
-    <path d="M50 43 Q42 39 41 47 Q40 56 47 59 Q53 61 58 54 Q61 47 56 42Z" fill="#D9A098"/>
-    <circle cx="49" cy="51" r="3" fill="#B07868"/>
-    <path d="M65 16 Q72 8 80 5 Q73 10 65 16Z" fill="#8FAF80"/>
-    <path d="M90 22 Q96 14 104 11 Q97 16 90 22Z" fill="#6A8A5A"/>
-  </svg>
-  <svg class="invite-deco invite-deco-br" viewBox="0 0 130 130" fill="none">
-    <path d="M5 5 Q20 30 35 65 Q45 90 50 125" stroke="#6A8A5A" stroke-width="1" fill="none"/>
-    <path d="M5 5 Q30 10 65 18 Q90 24 125 28" stroke="#6A8A5A" stroke-width=".8" fill="none"/>
-    <path d="M18 32 Q8 26 4 15 Q11 24 18 32Z" fill="#8FAF80"/>
-    <path d="M50 38 Q38 32 35 20 Q42 29 50 38Z" fill="#EAB8AE"/>
-    <path d="M50 43 Q42 39 41 47 Q40 56 47 59 Q53 61 58 54 Q61 47 56 42Z" fill="#D9A098"/>
-    <circle cx="49" cy="51" r="3" fill="#B07868"/>
-  </svg>
-
-  <span class="sec-label">Invitation</span>
-  <div class="gold-line"></div>
-
-  <div class="invite-frame">
-    <p class="invite-title">
-      서로의 곁에서<br>
-      평생을 함께하겠습니다
-    </p>
-    <p class="invite-body">
-      저희 두 사람이 사랑을 약속하는 자리에<br>
-      소중한 분들을 초대합니다.<br><br>
-      언제나 함께하며 서로를 아끼는<br>
-      가정을 이루겠습니다.<br>
-      바쁘신 걸음이지만 자리를 함께해<br>
-      축복해 주시면 감사하겠습니다.
-    </p>
-
-    <div class="family-row">
-      <div class="family-col">
-        <div><span class="f-badge">Groom</span></div>
-        <div>박○○ · 이○○<br>의 아들 <strong>지현</strong></div>
+  <div class="wrap">
+    <div class="loading-page">
+      <img src="./images/letter.png" alt="letter" class="letter">
+      <span>We are getting married</span>
+      <div class="loading-img">
+        <img src="./images/loading-img.png" alt="로딩 이미지">
       </div>
-      <div class="family-col">
-        <div><span class="f-badge">Bride</span></div>
-        <div>조○○ · 김○○<br>의 딸 <strong>예진</strong></div>
+      <p>지현♥예진의 결혼식에 초대합니다</p>
+      <div class="loading-dots">
+        <span></span><span></span><span></span>
       </div>
     </div>
-  </div>
-</section>
-
-
-<!-- ══════════════════════════════════
-     D-DAY
-══════════════════════════════════ -->
-<section class="dday-section fade-in">
-  <p class="dday-num" id="ddayNum">—</p>
-  <div style="width:40px;height:1px;background:linear-gradient(90deg,transparent,rgba(237,217,168,.5),transparent);margin:14px auto;"></div>
-  <p class="dday-sub" id="ddayLabel">결혼식까지</p>
-</section>
-
-
-<!-- ══════════════════════════════════
-     DATE & VENUE
-══════════════════════════════════ -->
-<section class="info-section fade-in">
-  <span class="sec-label">Date &amp; Venue</span>
-  <div class="gold-line"></div>
-  <p class="sec-title" style="margin-bottom:24px;">이날 함께해 주세요</p>
-
-  <div class="info-item">
-    <div class="info-icon">✦</div>
-    <div class="info-text">
-      <strong>DATE</strong>
-      <p>2026년 8월 15일 토요일</p>
-      <small>오후 12시 (낮 12시)</small>
-    </div>
-  </div>
-  <div class="info-item">
-    <div class="info-icon">✦</div>
-    <div class="info-text">
-      <strong>VENUE</strong>
-      <p>목화웨딩컨벤션</p>
-      <small>시티타워 15층</small>
-    </div>
-  </div>
-  <div class="info-item">
-    <div class="info-icon">✦</div>
-    <div class="info-text">
-      <strong>ADDRESS</strong>
-      <p>부산 연제구 중앙대로 1125</p>
-      <small>시티타워 빌딩 15층</small>
-    </div>
-  </div>
-  <div class="info-item">
-    <div class="info-icon">✦</div>
-    <div class="info-text">
-      <strong>PARKING</strong>
-      <p>건물 지하 1~3층</p>
-      <small>예식 시간 기준 3시간 무료</small>
-    </div>
-  </div>
-</section>
-
-
-<!-- ══════════════════════════════════
-     GALLERY
-══════════════════════════════════ -->
-<section class="gallery-section fade-in">
-  <span class="sec-label">Gallery</span>
-  <div class="gold-line"></div>
-  <p class="sec-title">소중한 순간들</p>
-  <div class="gallery-scroll">
-    <div class="gallery-item">
-      <div class="gallery-placeholder">
-        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#C8A090" stroke-width="1"><path d="M12 2C8.5 2 6 4.5 6 8s2.5 6 6 6 6-2.5 6-6-2.5-6-6-6Z"/><path d="M3 22c0-4 4-7 9-7s9 3 9 7"/></svg>
-        사진 1
+    <section class="main flx flx-col a-center">
+      <div class="line line1">
+        <img src="./images/line.png" alt="line" />
       </div>
-    </div>
-    <div class="gallery-item"><div class="gallery-placeholder"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#C8A090" stroke-width="1"><path d="M12 2C8.5 2 6 4.5 6 8s2.5 6 6 6 6-2.5 6-6-2.5-6-6-6Z"/><path d="M3 22c0-4 4-7 9-7s9 3 9 7"/></svg>사진 2</div></div>
-    <div class="gallery-item"><div class="gallery-placeholder"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#C8A090" stroke-width="1"><path d="M12 2C8.5 2 6 4.5 6 8s2.5 6 6 6 6-2.5 6-6-2.5-6-6-6Z"/><path d="M3 22c0-4 4-7 9-7s9 3 9 7"/></svg>사진 3</div></div>
-    <div class="gallery-item"><div class="gallery-placeholder"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#C8A090" stroke-width="1"><path d="M12 2C8.5 2 6 4.5 6 8s2.5 6 6 6 6-2.5 6-6-2.5-6-6-6Z"/><path d="M3 22c0-4 4-7 9-7s9 3 9 7"/></svg>사진 4</div></div>
-    <div class="gallery-item"><div class="gallery-placeholder"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#C8A090" stroke-width="1"><path d="M12 2C8.5 2 6 4.5 6 8s2.5 6 6 6 6-2.5 6-6-2.5-6-6-6Z"/><path d="M3 22c0-4 4-7 9-7s9 3 9 7"/></svg>사진 5</div></div>
-  </div>
-</section>
-
-
-<!-- ══════════════════════════════════
-     MAP
-══════════════════════════════════ -->
-<section class="map-section fade-in">
-  <span class="sec-label">Location</span>
-  <div class="gold-line"></div>
-  <p class="sec-title" style="margin-bottom:4px;">오시는 길</p>
-  <p style="text-align:center;font-size:13px;color:#9A8080;margin-bottom:0;">부산 연제구 중앙대로 1125 시티타워 15층</p>
-  <div class="map-frame">
-    <iframe
-      src="https://maps.google.com/maps?q=부산광역시+연제구+중앙대로+1125+시티타워&hl=ko&z=16&output=embed"
-      allowfullscreen loading="lazy"
-      referrerpolicy="no-referrer-when-downgrade"
-      title="목화웨딩컨벤션 위치"></iframe>
-  </div>
-  <div class="map-btns">
-    <a class="map-btn" href="https://map.kakao.com/link/search/부산광역시 연제구 중앙대로 1125 시티타워" target="_blank" rel="noopener">카카오맵으로 보기</a>
-    <a class="map-btn" href="https://map.naver.com/v5/search/부산 연제구 중앙대로 1125 시티타워" target="_blank" rel="noopener">네이버지도로 보기</a>
-  </div>
-</section>
-
-
-<!-- ══════════════════════════════════
-     RSVP
-══════════════════════════════════ -->
-<section class="rsvp-section fade-in">
-  <svg style="position:absolute;top:-8px;right:-8px;width:110px;opacity:.15;" viewBox="0 0 130 130" fill="none">
-    <path d="M5 5 Q30 10 65 18 Q90 24 125 28" stroke="#6A8A5A" stroke-width=".8" fill="none"/>
-    <path d="M50 38 Q38 32 35 20 Q42 29 50 38Z" fill="#EAB8AE"/>
-    <path d="M50 43 Q42 39 41 47 Q40 56 47 59 Q53 61 58 54 Q61 47 56 42Z" fill="#D9A098"/>
-    <circle cx="49" cy="51" r="3" fill="#B07868"/>
-    <path d="M65 16 Q72 8 80 5 Q73 10 65 16Z" fill="#8FAF80"/>
-  </svg>
-
-  <span class="sec-label">RSVP</span>
-  <div class="gold-line"></div>
-  <p class="sec-title">참석 여부를 알려주세요</p>
-
-  <p class="rsvp-desc">
-    참석 여부를 미리 알려주시면<br>
-    더욱 정성껏 준비하겠습니다.<br>
-    <span style="font-size:12px;color:#B09898;">예식일 2주 전까지 회신 부탁드립니다</span>
-  </p>
-  <!-- ★ href를 실제 구글폼 URL로 교체하세요 ★ -->
-  <a class="rsvp-btn" href="https://forms.gle/YOUR_FORM_ID" target="_blank" rel="noopener">
-    참석 여부 전달하기
-  </a>
-  <p class="rsvp-note">
-    버튼을 누르면 구글 설문 페이지로 이동합니다
-  </p>
-</section>
-
-
-<!-- ══════════════════════════════════
-     CONTACT
-══════════════════════════════════ -->
-<section class="contact-section fade-in">
-  <span class="sec-label">Contact</span>
-  <div class="gold-line"></div>
-  <p class="sec-title" style="margin-bottom:28px;">연락처</p>
-
-  <div class="contact-group">
-    <div class="contact-group-title"><span>Groom &amp; Family</span></div>
-    <div class="contact-grid">
-      <div class="contact-card">
-        <p class="who">신랑</p>
-        <p class="name">박지현</p>
-        <a href="tel:01012345678">📞 전화하기</a>
-        <a href="sms:01012345678">✉️ 문자하기</a>
+      <div class="flower-img">
+        <img src="./images/img1.png" alt="img" />
       </div>
-      <div class="contact-card">
-        <p class="who">신랑 아버지</p>
-        <p class="name">박○○</p>
-        <a href="tel:01011112222">📞 전화하기</a>
-        <a href="sms:01011112222">✉️ 문자하기</a>
+      <div class="title">We are getting married</div>
+      <div class="wedding-img">
+        <img src="./images/main_bg.png" alt="bg" />
+        <img src="./images/Subtract.png" alt="테이프" class="tape tape1" />
+        <img src="./images/Subtract.png" alt="테이프" class="tape tape2" />
       </div>
-      <div class="contact-card full">
-        <p class="who">신랑 어머니</p>
-        <p class="name">이○○</p>
-        <div class="btn-row">
-          <a href="tel:01033335555">📞 전화하기</a>
-          <a href="sms:01033335555">✉️ 문자하기</a>
+      <div class="main-txt">
+        <p>저희 두사람이 사랑으로 하나가 됩니다</p>
+        <h2>jihyeon &amp; yejin</h2>
+        <div class="txt-line">
+          <span class="straight"></span>
+          <span class="dia"></span>
+        </div>
+        <div class="txt-date">
+          <h2>2026년 10월 10일</h2>
+          <p>토요일 오후 1시 30분</p>
+        </div>
+        <div class="txt-location">
+          <i class="fa-solid fa-location-dot"></i>
+          <h2>W웨딩 목화웨딩컨벤션</h2>
+          <p>부산 연제구 중앙대로 1125 시티타워 15층</p>
         </div>
       </div>
-    </div>
-  </div>
+      <div class="line line2">
+        <img src="./images/line.png" alt="line" />
+      </div>
+    </section>
 
-  <div class="contact-group">
-    <div class="contact-group-title"><span>Bride &amp; Family</span></div>
-    <div class="contact-grid">
-      <div class="contact-card">
-        <p class="who">신부</p>
-        <p class="name">조예진</p>
-        <a href="tel:01098765432">📞 전화하기</a>
-        <a href="sms:01098765432">✉️ 문자하기</a>
+    <section class="invitation">
+      <div class="invitation-bg">
+        <img src="./images/sec2-bg.png" alt="bg" />
       </div>
-      <div class="contact-card">
-        <p class="who">신부 아버지</p>
-        <p class="name">조○○</p>
-        <a href="tel:01044446666">📞 전화하기</a>
-        <a href="sms:01044446666">✉️ 문자하기</a>
-      </div>
-      <div class="contact-card full">
-        <p class="who">신부 어머니</p>
-        <p class="name">김○○</p>
-        <div class="btn-row">
-          <a href="tel:01077778888">📞 전화하기</a>
-          <a href="sms:01077778888">✉️ 문자하기</a>
+      <div class="invitation-txt-box">
+        <div class="heart-sec">
+          <img src="./images/sec2-img2.png" alt="큐피트" class="cupid cupid1" />
+          <img src="./images/heart.png" alt="하트" class="heart" />
+          <img src="./images/sec2-img2.png" alt="큐피트" class="cupid cupid2" />
+        </div>
+        <div class="invitation-txt">
+          <h2 class="txt-title">Invitation</h2>
+          <p>
+            저희 두 사람이 처음 마주했던 순간, 서로가 서로에게<br />
+            뜻깊은 인연이자 약속임을 직감하였습니다. <br /><br />이제 그 소중한
+            믿음을 바탕으로 인생의 <br />새로운 길을 함께 걷고자 합니다. <br /><br />
+            오늘날 저희가 올바르게 자라 이토록 가슴 설레는 미래를<br />
+            꿈꿀 수 있게 된 것은 <br />오롯이 여러분들의 따뜻한 사랑 덕분입니다.<br /><br />
+            감사의 마음을 담아 첫걸음을 가다듬는 자리를 마련하였으니,<br />
+            부디 걸음 하시어 앞날을 격려와 축복으로 밝혀주시면<br />
+            더없는 기쁨으로 간직하겠습니다.
+          </p>
         </div>
       </div>
-    </div>
+      <div class="invitation-img">
+        <img src="./images/sec2-img.png" alt="캐릭터 이미지" />
+      </div>
+    </section>
+
+    <section class="dateNloca">
+      <div class="dateNloca-img">
+        <img src="./images/flower-hand.png" alt="flower" />
+      </div>
+      <div class="date">
+        <h2>2026년 10월 10일</h2>
+        <p>토요일 오후 1시 30분</p>
+      </div>
+      <div class="date2">
+        <img src="./images/calendar.png" alt="calendar">
+      </div>
+      <div class="date-txt">
+        <p>우리 함께하기까지</p>
+        <div class="count">100일 23시간 47분 30초</div>
+      </div>
+      <div class="location">
+        <div class="location-txt">
+          <h2 class="txt-title">Location</h2>
+          <p>
+            부산 연제구 중앙대로 1125 시티타워15층<br />
+            W웨딩 목화웨딩컨벤션
+          </p>
+        </div>
+        <div class="location-map">
+          <div class="map">지도들어갈 자리</div>
+          <ul class="location-info">
+            <li>
+              <span>버스</span>
+              <p>29, 51, 179, 189 연산역 연산교차로 하차 도보 3분</p>
+            </li>
+            <li>
+              <span>지하철</span>
+              <p>연산역 1호선, 3호선 하차 도보 5분</p>
+            </li>
+            <li>
+              <span>주차</span>
+              <p>건물 내 3시간 무료주차 / 건물 외 2시간 무료주차</p>
+            </li>
+          </ul>
+          <ul class="map-list">
+            <li><a href="">네이버지도</a></li>
+            <li><a href="">카카오맵</a></li>
+            <li><a href="">T맵</a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="schedule">
+      <div class="schedule-bg">
+        <img src="./images/schedule-bg.png" alt="bg">
+      </div>
+      <div class="schedule-ribbon">
+        <img src="./images/ribbon.png" alt="ribbon">
+      </div>
+      <div class="schedule-info">
+        <h2 class="txt-title">Our day Schedule</h2>
+        <div class="schedule-list">
+          <svg class="schedule-path-svg" viewBox="0 0 100 297" preserveAspectRatio="none" aria-hidden="true">
+            <path id="schedulePath"
+              d="M50 0 C60 20 60 60 53 80 C46 100 41 120 45 150 C49 180 54 190 58 220 C62 245 60 275 50 300" />
+          </svg>
+          <div class="schedule-bird">
+            <img src="./images/bird.png" alt="bird" />
+          </div>
+          <ul class="schedule-items">
+            <li class="schedule-item">
+              <div class="txt-box">
+                <span>12:00</span>
+                <h2>하객 맞이</h2>
+                <p>로비에서 신랑·신부와 인사를 나눕니다</p>
+              </div>
+              <div class="img-box">
+                <img src="./images/bouqet.png" alt="img" />
+              </div>
+            </li>
+            <li class="schedule-item">
+              <div class="img-box">
+                <img src="./images/ring.png" alt="img" />
+              </div>
+              <div class="txt-box">
+                <span>13:30</span>
+                <h2>예식</h2>
+                <p>밸리스홀에서 본식이 진행됩니다</p>
+              </div>
+            </li>
+            <li class="schedule-item">
+              <div class="txt-box">
+                <span>14:00</span>
+                <h2>식사</h2>
+                <p>뷔페에서 식사를 즐겨주세요</p>
+              </div>
+              <div class="img-box">
+                <img src="./images/dish.png" alt="img" />
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="ourmoments">
+      <h2 class="txt-title">Our Moments</h2>
+      <div class="wedding-img-outer">
+        <div class="wedding-img-box">
+          <ul class="wedding-img-list">
+            <li class="wedding-img-item">
+              <img src="./images/wedding_1.png" alt="img">
+            </li>
+            <li class="wedding-img-item">
+              <img src="./images/wedding_2.png" alt="img">
+            </li>
+            <li class="wedding-img-item">
+              <img src="./images/wedding_3.png" alt="img">
+            </li>
+            <li class="wedding-img-item">
+              <img src="./images/wedding_4.png" alt="img">
+            </li>
+          </ul>
+          <div class="txt-img">
+            <img src="./images/txt-img.png" alt="txtimg">
+          </div>
+        </div>
+        <div class="wedding-img-box wedding-img-box2">
+          <ul class="wedding-img-list">
+            <li class="wedding-img-item">
+              <img src="./images/wedding_5.png" alt="img">
+            </li>
+            <li class="wedding-img-item">
+              <img src="./images/wedding_6.png" alt="img">
+            </li>
+            <li class="wedding-img-item">
+              <img src="./images/wedding_7.png" alt="img">
+            </li>
+            <li class="wedding-img-item">
+              <img src="./images/wedding_8.png" alt="img">
+            </li>
+          </ul>
+          <div class="txt-img">
+            <img src="./images/txt-img.png" alt="txtimg">
+          </div>
+        </div>
+        <div class="wedding-img-box wedding-img-box3">
+          <ul class="wedding-img-list">
+            <li class="wedding-img-item">
+              <img src="./images/wedding_9.png" alt="img">
+            </li>
+            <li class="wedding-img-item">
+              <img src="./images/wedding_10.png" alt="img">
+            </li>
+            <li class="wedding-img-item">
+              <img src="./images/wedding_11.png" alt="img">
+            </li>
+            <li class="wedding-img-item">
+              <img src="./images/wedding_12.png" alt="img">
+            </li>
+          </ul>
+          <div class="txt-img">
+            <img src="./images/txt-img.png" alt="txtimg">
+          </div>
+        </div>
+      </div>
+      <div class="img-more">
+        <button class="img-more-btn" type="button">
+          웨딩 사진첩 보기
+        </button>
+      </div>
+
+      <div class="img-popup">
+        <div class="img-popup-card">
+          <div class="img-popup-header">
+            <h3>Wedding Album</h3>
+            <button class="img-popup-close" type="button" aria-label="닫기">&times;</button>
+          </div>
+          <ul class="img-popup-item" data-lenis-prevent>
+            <li class="img-popup-list">
+              <img src="./images/wedding_1.png" alt="img">
+            </li>
+            <li class="img-popup-list">
+              <img src="./images/wedding_2.png" alt="img">
+            </li>
+            <li class="img-popup-list">
+              <img src="./images/wedding_3.png" alt="img">
+            </li>
+            <li class="img-popup-list">
+              <img src="./images/wedding_4.png" alt="img">
+            </li>
+            <li class="img-popup-list">
+              <img src="./images/wedding_5.png" alt="img">
+            </li>
+            <li class="img-popup-list">
+              <img src="./images/wedding_6.png" alt="img">
+            </li>
+            <li class="img-popup-list">
+              <img src="./images/wedding_7.png" alt="img">
+            </li>
+            <li class="img-popup-list">
+              <img src="./images/wedding_8.png" alt="img">
+            </li>
+            <li class="img-popup-list">
+              <img src="./images/wedding_9.png" alt="img">
+            </li>
+            <li class="img-popup-list">
+              <img src="./images/wedding_10.png" alt="img">
+            </li>
+            <li class="img-popup-list">
+              <img src="./images/wedding_11.png" alt="img">
+            </li>
+            <li class="img-popup-list">
+              <img src="./images/wedding_12.png" alt="img">
+            </li>
+            <li class="img-popup-list">
+              <img src="./images/wedding_13.png" alt="img">
+            </li>
+            <li class="img-popup-list">
+              <img src="./images/wedding_14.png" alt="img">
+            </li>
+            <li class="img-popup-list">
+              <img src="./images/wedding_15.png" alt="img">
+            </li>
+            <li class="img-popup-list">
+              <img src="./images/wedding_16.png" alt="img">
+            </li>
+            <li class="img-popup-list">
+              <img src="./images/wedding_17.png" alt="img">
+            </li>
+            <li class="img-popup-list">
+              <img src="./images/wedding_18.png" alt="img">
+            </li>
+            <li class="img-popup-list">
+              <img src="./images/wedding_19.png" alt="img">
+            </li>
+            <li class="img-popup-list">
+              <img src="./images/wedding_20.png" alt="img">
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="img-slider">
+        <button class="img-slider-close" type="button" aria-label="닫기">&times;</button>
+        <button class="img-slider-nav img-slider-prev" type="button" aria-label="이전 사진">&#10094;</button>
+        <div class="img-slider-stage">
+          <img class="img-slider-img" src="" alt="wedding photo" />
+        </div>
+        <button class="img-slider-nav img-slider-next" type="button" aria-label="다음 사진">&#10095;</button>
+        <div class="img-slider-count"><span class="current">1</span> / <span class="total">20</span></div>
+      </div>
+    </section>
+
+    <section class="heartmoney">
+      <h2 class="txt-title">Gift</h2>
+      <p class="heartmoney-desc">
+        참석이 어려우신 분들을 위해<br />
+        계좌번호를 안내드립니다
+      </p>
+      <div class="account-group">
+        <button class="account-toggle" type="button" data-target="account-groom">
+          <span>신랑측</span>
+          <i class="fa-solid fa-chevron-down"></i>
+        </button>
+        <div class="account-panel" id="account-groom">
+          <div class="account-panel-inner">
+            <div class="account-card">
+              <div class="account-info">
+                <p class="account-name">박지현 (신랑)</p>
+                <p class="account-number">신한은행 110-123-456789</p>
+              </div>
+              <button class="account-copy" type="button" data-copy="신한은행 110-123-456789">복사</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="account-group">
+        <button class="account-toggle" type="button" data-target="account-bride">
+          <span>신부측</span>
+          <i class="fa-solid fa-chevron-down"></i>
+        </button>
+        <div class="account-panel" id="account-bride">
+          <div class="account-panel-inner">
+            <div class="account-card">
+              <div class="account-info">
+                <p class="account-name">조예진 (신부)</p>
+                <p class="account-number">우리은행 1002-123-456789</p>
+              </div>
+              <button class="account-copy" type="button" data-copy="우리은행 1002-123-456789">복사</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- <section class="guestbook">
+      <h2 class="txt-title">For Husband and Wife</h2>
+      <p class="guestbook-desc">축하의 마음을 자유롭게 남겨주세요</p>
+
+      <form class="guestbook-form">
+        <input type="text" class="guestbook-name" placeholder="이름" maxlength="10" required />
+        <textarea class="guestbook-msg" placeholder="따뜻한 한마디를 남겨주세요" maxlength="200" required></textarea>
+        <button type="submit" class="guestbook-submit">메시지 남기기</button>
+      </form>
+
+      <ul class="guestbook-list"></ul>
+    </section> -->
+
+    <section class="thankyou">
+      <div class="thankyou-img">
+        <img src="./images/leaf.png" alt="leaf">
+      </div>
+      <h2 class="txt-title">Thank You</h2>
+      <div class="txt-line">
+        <span class="straight"></span>
+        <span class="dia"></span>
+      </div>
+      <p class="thankyou-txt">
+        바쁘신 걸음 하시어 저희 두 사람의<br />
+        새로운 시작을 축복해 주셔서<br />
+        진심으로 감사드립니다.<br /><br />
+        보내주신 따뜻한 마음 오래도록 간직하며<br />
+        늘 행복하게 살아가는 모습으로 보답하겠습니다.
+      </p>
+      <div class="thankyou-sign">
+        <p class="thankyou-names">
+          <span>박지현</span>
+          <i class="fa-solid fa-heart"></i>
+          <span>조예진</span>
+        </p>
+        <p class="thankyou-from">올림</p>
+      </div>
+    </section>
   </div>
-</section>
 
-
-<!-- ══════════════════════════════════
-     ACCOUNT
-══════════════════════════════════ -->
-<section class="account-section fade-in">
-  <span class="sec-label">마음 전하기</span>
-  <div class="gold-line"></div>
-  <p class="sec-title" style="margin-bottom:8px;">축하를 전해주세요</p>
-  <p style="text-align:center;font-size:13px;color:#9A8888;margin-bottom:22px;line-height:1.9;">
-    소중한 마음에 깊이 감사드립니다
-  </p>
-
-  <div class="account-accordion">
-    <div class="account-header" onclick="toggleAccount(this)">
-      <span>신랑측 계좌번호</span><span class="chevron">▾</span>
-    </div>
-    <div class="account-body">
-      <div class="account-row">
-        <div><p class="bank">국민은행</p><p class="num">123456-78-901234</p><p class="holder">박지현 (신랑)</p></div>
-        <button class="copy-btn" onclick="copyAccount('123456-78-901234')">복사</button>
-      </div>
-      <div class="account-row">
-        <div><p class="bank">신한은행</p><p class="num">110-123-456789</p><p class="holder">박○○ (신랑 아버지)</p></div>
-        <button class="copy-btn" onclick="copyAccount('110-123-456789')">복사</button>
-      </div>
-      <div class="account-row">
-        <div><p class="bank">우리은행</p><p class="num">1002-345-678901</p><p class="holder">이○○ (신랑 어머니)</p></div>
-        <button class="copy-btn" onclick="copyAccount('1002-345-678901')">복사</button>
-      </div>
-    </div>
-  </div>
-
-  <div class="account-accordion">
-    <div class="account-header" onclick="toggleAccount(this)">
-      <span>신부측 계좌번호</span><span class="chevron">▾</span>
-    </div>
-    <div class="account-body">
-      <div class="account-row">
-        <div><p class="bank">카카오뱅크</p><p class="num">3333-01-1234567</p><p class="holder">조예진 (신부)</p></div>
-        <button class="copy-btn" onclick="copyAccount('3333-01-1234567')">복사</button>
-      </div>
-      <div class="account-row">
-        <div><p class="bank">하나은행</p><p class="num">123-456789-01234</p><p class="holder">조○○ (신부 아버지)</p></div>
-        <button class="copy-btn" onclick="copyAccount('123-456789-01234')">복사</button>
-      </div>
-      <div class="account-row">
-        <div><p class="bank">농협은행</p><p class="num">302-1234-5678-91</p><p class="holder">김○○ (신부 어머니)</p></div>
-        <button class="copy-btn" onclick="copyAccount('302-1234-5678-91')">복사</button>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-<!-- ══════════════════════════════════
-     FOOTER
-══════════════════════════════════ -->
-<footer>
-  <svg class="footer-floral footer-floral-tl" viewBox="0 0 140 140" fill="none">
-    <path d="M5 5 Q20 30 35 65 Q45 90 50 135" stroke="#8FAF80" stroke-width="1" fill="none"/>
-    <path d="M5 5 Q30 10 65 18 Q90 24 135 28" stroke="#8FAF80" stroke-width=".8" fill="none"/>
-    <path d="M18 32 Q8 26 4 15 Q11 24 18 32Z" fill="#8FAF80"/>
-    <path d="M50 40 Q38 34 36 22 Q43 31 50 40Z" fill="#EAB8AE"/>
-    <path d="M50 45 Q42 41 41 49 Q40 58 47 61 Q53 63 58 56 Q61 49 56 44Z" fill="#D9A098"/>
-    <circle cx="49" cy="53" r="3" fill="#B07868"/>
-  </svg>
-  <svg class="footer-floral footer-floral-br" viewBox="0 0 140 140" fill="none">
-    <path d="M5 5 Q20 30 35 65 Q45 90 50 135" stroke="#8FAF80" stroke-width="1" fill="none"/>
-    <path d="M5 5 Q30 10 65 18 Q90 24 135 28" stroke="#8FAF80" stroke-width=".8" fill="none"/>
-    <path d="M18 32 Q8 26 4 15 Q11 24 18 32Z" fill="#8FAF80"/>
-    <path d="M50 40 Q38 34 36 22 Q43 31 50 40Z" fill="#EAB8AE"/>
-    <path d="M50 45 Q42 41 41 49 Q40 58 47 61 Q53 63 58 56 Q61 49 56 44Z" fill="#D9A098"/>
-    <circle cx="49" cy="53" r="3" fill="#B07868"/>
-  </svg>
-
-  <div class="footer-inner">
-    <p class="footer-en">Forever &amp; Always</p>
-    <p class="footer-names">
-      박지현<span class="footer-heart">♥</span>조예진
-    </p>
-    <div class="footer-rule"></div>
-    <p class="footer-date">
-      2026 · 08 · 15 · Saturday<br>
-      소중한 발걸음을 기다리겠습니다
-    </p>
-  </div>
-</footer>
-
-<div class="toast" id="toast">복사되었습니다</div>
-
-<script>
-  /* D-Day */
-  (function () {
-    const wedding = new Date('2026-08-15T12:00:00');
-    const today = new Date(); today.setHours(0,0,0,0);
-    const diff = Math.round((wedding - today) / 86400000);
-    const el = document.getElementById('ddayNum');
-    const lb = document.getElementById('ddayLabel');
-    if (diff > 0)        { el.textContent = 'D-' + diff;           lb.textContent = '결혼식까지 ' + diff + '일 남았습니다'; }
-    else if (diff === 0) { el.textContent = 'D-Day';               lb.textContent = '오늘이 결혼식입니다'; }
-    else                 { el.textContent = 'D+' + Math.abs(diff); lb.textContent = '결혼한 지 ' + Math.abs(diff) + '일이 되었습니다'; }
-  })();
-
-  /* Scroll fade-in */
-  const observer = new IntersectionObserver(
-    entries => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); }),
-    { threshold: 0.08 }
-  );
-  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
-
-  /* Accordion */
-  function toggleAccount(header) {
-    header.classList.toggle('open');
-    header.nextElementSibling.classList.toggle('open');
-  }
-
-  /* Copy */
-  function copyAccount(num) {
-    navigator.clipboard.writeText(num).then(() => showToast(num + ' 복사되었습니다'));
-  }
-
-  function showToast(msg) {
-    const t = document.getElementById('toast');
-    t.textContent = msg;
-    t.classList.add('show');
-    setTimeout(() => t.classList.remove('show'), 2200);
-  }
-</script>
+  <script src="https://unpkg.com/lenis@1.3.25/dist/lenis.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/MotionPathPlugin.min.js"></script>
+  <script src="./main.js"></script>
 </body>
+
 </html>
