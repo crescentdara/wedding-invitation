@@ -54,7 +54,7 @@ function initMainSection() {
   tl.from(".line1", { opacity: 0, x: -40, rotate: 20, duration: 0.9 })
     .from(".flower-img", { opacity: 0, y: -20, rotate: -10, duration: 0.6 }, "-=0.5")
     .from(".title", { opacity: 0, y: 20, duration: 0.7 }, "-=0.2")
-    .from(".wedding-img img", { opacity: 0, scale: 0.85, duration: 0.9, ease: "power2.out" }, "-=0.3")
+    .from(".wedding-main-photo", { opacity: 0, scale: 0.85, duration: 0.9, ease: "power2.out" }, "-=0.3")
     .from(".tape1", { opacity: 0, x: -30, y: -20, rotate: -90, duration: 0.5, ease: "back.out(2)" }, "-=0.4")
     .from(".tape2", { opacity: 0, x: 30, y: 20, rotate: -90, duration: 0.5, ease: "back.out(2)" }, "-=0.35")
     .from(
@@ -161,17 +161,14 @@ function initDateLocaSection() {
     stagger: 0.1,
   });
 
-  gsap.from(".date2 img", {
-  scrollTrigger: {
-    trigger: ".date2",
-    start: "top 80%",
-  },
-  opacity: 0,
-  scale: 0.9,
-  y: 20,
-  duration: 0.6,
-  ease: "power2.out",
-});
+  gsap.from(".date2-cal > div", {
+    scrollTrigger: { trigger: ".date2", start: "top 80%" },
+    opacity: 0,
+    scaleY: 0,
+    duration: 0.5,
+    stagger: 0.12,
+    ease: "power2.out",
+  });
 
   const countTl = gsap.timeline({
     scrollTrigger: { trigger: ".date-txt", start: "top 85%" },
@@ -188,7 +185,7 @@ function initDateLocaSection() {
     stagger: 0.1,
   });
 
-  gsap.from(".location-map .map", {
+  gsap.from(".location-map .map-shell", {
     scrollTrigger: { trigger: ".location-map", start: "top 85%" },
     opacity: 0,
     scale: 0.95,
@@ -278,31 +275,65 @@ function initSchedulePathAndBird() {
    5. 실시간 카운트다운 (결혼식: 2026-10-10 13:30)
 ============================ */
 function initCountdown() {
+  const labelEl = document.querySelector(".date-txt p");
   const countEl = document.querySelector(".date-txt .count");
-  if (!countEl) return;
 
-  const target = new Date(2026, 9, 10, 13, 30, 0).getTime(); // month는 0부터 시작 -> 9 = 10월
+  if (!labelEl || !countEl) return;
+
+  // 한국 시간 기준 2026년 10월 10일 오후 1시 30분
+  const weddingTime = new Date(
+    "2026-10-10T13:30:00+09:00"
+  ).getTime();
 
   function update() {
     const now = Date.now();
-    const diff = target - now;
-
-    if (diff <= 0) {
-      countEl.textContent = "저희 결혼식이 진행 중입니다";
-      clearInterval(timer);
-      return;
-    }
+    const isMarried = now >= weddingTime;
+    const diff = Math.abs(weddingTime - now);
 
     const day = Math.floor(diff / (1000 * 60 * 60 * 24));
-    const hour = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const min = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-    const sec = Math.floor((diff % (1000 * 60)) / 1000);
 
-    countEl.textContent = `${day}일 ${hour}시간 ${min}분 ${sec}초`;
+    const hour = Math.floor(
+      (diff % (1000 * 60 * 60 * 24)) /
+      (1000 * 60 * 60)
+    );
+
+    const min = Math.floor(
+      (diff % (1000 * 60 * 60)) /
+      (1000 * 60)
+    );
+
+    const sec = Math.floor(
+      (diff % (1000 * 60)) / 1000
+    );
+
+    if (isMarried) {
+      labelEl.textContent = "우리 함께한 지";
+    } else {
+      labelEl.textContent = "우리 함께하기까지";
+    }
+
+    countEl.textContent =
+      `${day}일 ${hour}시간 ${min}분 ${sec}초`;
   }
 
   update();
-  const timer = setInterval(update, 1000);
+  setInterval(update, 1000);
+}
+
+function initReceptionNotice() {
+  const receptionSection =
+    document.querySelector("#reception-notice");
+
+  if (!receptionSection) return;
+
+  // 피로연 종료: 2026년 9월 27일 오후 7시, 한국 시간
+  const receptionEnd = new Date(
+    "2026-09-27T19:00:00+09:00"
+  ).getTime();
+
+  if (Date.now() >= receptionEnd) {
+    receptionSection.remove();
+  }
 }
 
 /* ============================
@@ -664,6 +695,277 @@ function initHeartMoney() {
 // }
 
 /* ============================
+   네이버·카카오 지도 공통 처리
+============================ */
+
+const WEDDING_MAP_CONFIG = {
+  name: "W웨딩 목화웨딩컨벤션",
+  address: "부산광역시 연제구 중앙대로 1125",
+  detail: "시티타워 15층",
+};
+
+const RECEPTION_MAP_CONFIG = {
+  name: "은하수가든",
+  address: "제주특별자치도 서귀포시 표선면 중산간동로 5123",
+  detail: "신랑측 피로연",
+};
+
+function initDualMap(rootSelector, config) {
+  const root = document.querySelector(rootSelector);
+  if (!root) return;
+
+  const tabs = [...root.querySelectorAll(".map-tab")];
+  const maps = [...root.querySelectorAll(".wedding-map")];
+  const statusEl = root.querySelector(".map-status");
+
+  if (tabs.length === 0 || maps.length === 0) return;
+
+  let coordinatesPromise = null;
+  let kakaoMap = null;
+  let naverMap = null;
+
+  function setStatus(message, isError = false) {
+    if (!statusEl) return;
+
+    statusEl.textContent = message;
+    statusEl.classList.toggle("error", isError);
+    statusEl.classList.remove("hidden");
+  }
+
+  function hideStatus() {
+    if (!statusEl) return;
+    statusEl.classList.add("hidden");
+  }
+
+  function geocodeWithKakao() {
+    return new Promise((resolve, reject) => {
+      if (!window.kakao?.maps?.services) {
+        reject(new Error("카카오 지도 SDK 오류"));
+        return;
+      }
+
+      const geocoder = new kakao.maps.services.Geocoder();
+
+      geocoder.addressSearch(
+        config.address,
+        (result, status) => {
+          if (
+            status !== kakao.maps.services.Status.OK ||
+            result.length === 0
+          ) {
+            reject(new Error("카카오 주소검색 실패"));
+            return;
+          }
+
+          resolve({
+            lat: Number(result[0].y),
+            lng: Number(result[0].x),
+          });
+        }
+      );
+    });
+  }
+
+  function geocodeWithNaver() {
+    return new Promise((resolve, reject) => {
+      if (!window.naver?.maps?.Service) {
+        reject(new Error("네이버 지도 SDK 오류"));
+        return;
+      }
+
+      naver.maps.Service.geocode(
+        { query: config.address },
+        (status, response) => {
+          const addresses = response?.v2?.addresses;
+
+          if (
+            status !== naver.maps.Service.Status.OK ||
+            !addresses ||
+            addresses.length === 0
+          ) {
+            reject(new Error("네이버 주소검색 실패"));
+            return;
+          }
+
+          resolve({
+            lat: Number(addresses[0].y),
+            lng: Number(addresses[0].x),
+          });
+        }
+      );
+    });
+  }
+
+  function getCoordinates() {
+    if (coordinatesPromise) {
+      return coordinatesPromise;
+    }
+
+    coordinatesPromise = geocodeWithKakao()
+      .catch(() => geocodeWithNaver())
+      .catch((error) => {
+        coordinatesPromise = null;
+        throw error;
+      });
+
+    return coordinatesPromise;
+  }
+
+  function createKakaoMap(container, coordinates) {
+    const position = new kakao.maps.LatLng(
+      coordinates.lat,
+      coordinates.lng
+    );
+
+    if (kakaoMap) {
+      kakaoMap.relayout();
+      kakaoMap.setCenter(position);
+      return;
+    }
+
+    kakaoMap = new kakao.maps.Map(container, {
+      center: position,
+      level: 3,
+    });
+
+    const marker = new kakao.maps.Marker({
+      map: kakaoMap,
+      position,
+    });
+
+    const infoWindow = new kakao.maps.InfoWindow({
+      content: `
+        <div class="map-place-label">
+          <strong>${config.name}</strong>
+          <span>${config.detail}</span>
+        </div>
+      `,
+    });
+
+    infoWindow.open(kakaoMap, marker);
+
+    kakao.maps.event.addListener(marker, "click", () => {
+      infoWindow.open(kakaoMap, marker);
+    });
+  }
+
+  function createNaverMap(container, coordinates) {
+    const position = new naver.maps.LatLng(
+      coordinates.lat,
+      coordinates.lng
+    );
+
+    if (naverMap) {
+      naver.maps.Event.trigger(naverMap, "resize");
+      naverMap.setCenter(position);
+      return;
+    }
+
+    naverMap = new naver.maps.Map(container, {
+      center: position,
+      zoom: 16,
+      zoomControl: true,
+      zoomControlOptions: {
+        position: naver.maps.Position.TOP_RIGHT,
+      },
+    });
+
+    const marker = new naver.maps.Marker({
+      map: naverMap,
+      position,
+    });
+
+    const infoWindow = new naver.maps.InfoWindow({
+      content: `
+        <div class="map-place-label">
+          <strong>${config.name}</strong>
+          <span>${config.detail}</span>
+        </div>
+      `,
+      borderWidth: 0,
+      backgroundColor: "#ffffff",
+      anchorSize: new naver.maps.Size(10, 10),
+    });
+
+    infoWindow.open(naverMap, marker);
+
+    naver.maps.Event.addListener(marker, "click", () => {
+      if (infoWindow.getMap()) {
+        infoWindow.close();
+      } else {
+        infoWindow.open(naverMap, marker);
+      }
+    });
+  }
+
+  async function showMap(mapId) {
+    const container = document.getElementById(mapId);
+    if (!container) return;
+
+    setStatus(`${config.name} 지도를 불러오는 중입니다.`);
+
+    try {
+      const coordinates = await getCoordinates();
+
+      if (mapId.includes("kakao")) {
+        createKakaoMap(container, coordinates);
+      } else {
+        createNaverMap(container, coordinates);
+      }
+
+      hideStatus();
+    } catch (error) {
+      console.error(error);
+
+      setStatus(
+        "지도를 불러오지 못했습니다. 지도 API 등록 도메인을 확인해주세요.",
+        true
+      );
+    }
+  }
+
+  function activateTab(selectedTab) {
+    const targetId = selectedTab.dataset.map;
+    const targetMap = document.getElementById(targetId);
+
+    if (!targetMap) return;
+
+    tabs.forEach((tab) => {
+      const selected = tab === selectedTab;
+
+      tab.classList.toggle("active", selected);
+      tab.setAttribute(
+        "aria-selected",
+        String(selected)
+      );
+    });
+
+    maps.forEach((map) => {
+      const selected = map === targetMap;
+
+      map.classList.toggle("active", selected);
+      map.hidden = !selected;
+    });
+
+    requestAnimationFrame(() => {
+      showMap(targetId);
+    });
+  }
+
+  tabs.forEach((tab) => {
+    tab.addEventListener("click", () => {
+      activateTab(tab);
+    });
+  });
+
+  const firstTab =
+    root.querySelector(".map-tab.active") ||
+    tabs[0];
+
+  activateTab(firstTab);
+}
+
+/* ============================
    9. thankyou 섹션
 ============================ */
 function initThankYou() {
@@ -678,6 +980,9 @@ function initThankYou() {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
+  // 다른 레이아웃 계산 전에 먼저 숨김 처리
+  initReceptionNotice();
+
   initLoadingPage();
   initMainSection();
   initInvitationSection();
@@ -686,6 +991,18 @@ document.addEventListener("DOMContentLoaded", () => {
   initCountdown();
   initImgPopup();
   initHeartMoney();
-  initOurMoments(); 
+  initOurMoments();
   initThankYou();
+
+  // 결혼식장 지도
+  initDualMap(
+    ".location-map",
+    WEDDING_MAP_CONFIG
+  );
+
+  // 피로연 장소 지도
+  initDualMap(
+    ".notice-map",
+    RECEPTION_MAP_CONFIG
+  );
 });

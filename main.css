@@ -184,7 +184,7 @@ body {
 
 .line1 {
   position: absolute;
-  top: -10%;
+  top: -7%;
   transform: scaleX(-1) rotate(7deg);
 }
 /* 
@@ -197,45 +197,46 @@ body {
   font-family: "Corinthia", cursive;
   font-size: 30px;
   color: var(--primary);
-  margin-top: 40px;
+  margin-top: 30px;
   margin-bottom: 20px;
   line-height: 1.2;
   text-align: center;
 }
 
 .flower-img {
-  width: 14px;
+  width: 24px;
   transform: rotate(30deg);
-  margin-top: 40px;
+  margin-top: 60px;
 }
 
 .wedding-img {
-  width: 100%;
+  width: calc(100% - 50px);
   max-width: 300px;
-  margin: 0 auto;
+  margin: 0 auto 24px;
   position: relative;
-  margin-bottom: 24px;
+  overflow: visible;
 }
 
 .tape {
   width: 60px;
-  transform: rotate(-45deg);
   position: absolute;
-  z-index: 10;
+  z-index: 100;
+  transform: rotate(-45deg);
 }
 
 .tape1 {
   top: -10px;
-  left: -30px;
+  left: -20px;
 }
 
 .tape2 {
+  right: -20px;
   bottom: -10px;
-  right: -30px;
 }
 
 .main-txt {
   text-align: center;
+  margin-top: 10px;
 }
 
 .main-txt > p {
@@ -328,8 +329,9 @@ body {
 
 .invitation-bg img {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  height: 1000px;
+  object-fit: fill;
+  /* margin-bottom: 50px; */
 }
 
 .invitation-txt-box {
@@ -374,7 +376,7 @@ body {
 
 .invitation-img {
   width: 50%;
-  position: absolute;
+  /* position: absolute; */
   bottom: 20px;
   left: -20px;
   opacity: 0.7;
@@ -383,7 +385,7 @@ body {
 
 /* dateNloca */
 .dateNloca {
-  padding-top: 100px;
+  padding-top: 50px;
   padding-bottom: 100px;
 }
 
@@ -1165,9 +1167,129 @@ body {
   word-break: break-word;
 }
 
+/* notice - 신랑측 피로연 */
+.notice {
+  margin-top: 120px;
+  margin-bottom: 100px;
+  padding: 60px 28px 70px;
+  text-align: center;
+  background: #ffffff;
+}
+
+.notice-ornament {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 34px;
+}
+
+.notice-ornament::before,
+.notice-ornament::after {
+  content: "";
+  width: 100px;
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    var(--primary-light)
+  );
+}
+
+.notice-ornament::after {
+  background: linear-gradient(
+    to left,
+    transparent,
+    var(--primary-light)
+  );
+}
+
+.notice-ornament span {
+  width: 12px;
+  height: 12px;
+  border: 1px solid var(--primary-light);
+  transform: rotate(45deg);
+}
+
+.notice-main-title {
+  margin-bottom: 22px;
+  color: var(--primary);
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.notice-parents {
+  margin-bottom: 6px;
+  color: var(--text-primary);
+  font-size: 15px;
+  letter-spacing: 2px;
+}
+
+.notice-couple {
+  color: var(--text-primary);
+  font-size: 14px;
+  letter-spacing: 1px;
+}
+
+.notice-couple span {
+  margin: 0 5px;
+  color: var(--primary);
+}
+
+.notice-message {
+  margin: 20px 0;
+  color: var(--text-secondary);
+  font-size: 13px;
+  line-height: 2;
+}
+
+.notice-detail {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.notice-detail h3 {
+  margin-bottom: 12px;
+  color: var(--primary);
+  font-size: 19px;
+  font-weight: 700;
+  letter-spacing: 4px;
+}
+
+.notice-detail h3 span {
+  margin: 0 4px;
+  font-size: 14px;
+}
+
+.notice-detail p {
+  color: var(--text-primary);
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+.notice-map {
+  margin-top: 38px;
+  text-align: left;
+}
+
+.notice-map .map-shell {
+  margin-bottom: 20px;
+}
+
+.notice-transport {
+  margin-top: 20px;
+}
+
+.notice-img {
+  width: 60px;
+  margin: 10px auto;
+}
+
 /* thankyou - 마지막 인사 */
 .thankyou {
   margin-top: 120px;
+  margin-bottom: 100px;
   padding: 50px 24px;
   text-align: center;
   background: #fff;
@@ -1191,7 +1313,7 @@ body {
   font-size: 14px;
   line-height: 1.9;
   color: var(--text-secondary);
-  margin-bottom: 36px;
+  margin-bottom: 40px;
 }
 
 .thankyou-sign {
@@ -1219,3 +1341,120 @@ body {
   font-size: 13px;
   color: var(--text-tertiary);
 }
+
+/* ============================
+   네이버·카카오 지도
+============================ */
+.map-shell {
+  margin-bottom: 20px;
+}
+
+.map-tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 10px;
+  padding: 5px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-full);
+  background: var(--bg-soft);
+}
+
+.map-tab {
+  flex: 1;
+  border: 0;
+  border-radius: var(--radius-full);
+  padding: 10px 8px;
+  background: transparent;
+  color: var(--text-secondary);
+  font-family: "Gowun Batang", serif;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.map-tab.active {
+  background: var(--primary);
+  color: #fff;
+  box-shadow: 0 4px 12px var(--shadow);
+}
+
+.map-tab:focus-visible {
+  outline: 2px solid var(--primary-light);
+  outline-offset: 2px;
+}
+
+.map-stage {
+  position: relative;
+  width: 100%;
+  height: 270px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  background: var(--bg-soft);
+}
+
+.wedding-map {
+  display: none;
+  width: 100%;
+  height: 100%;
+}
+
+.wedding-map.active {
+  display: block;
+}
+
+.map-status {
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: var(--bg-soft);
+  color: var(--text-tertiary);
+  font-size: 13px;
+  line-height: 1.6;
+  text-align: center;
+}
+
+.map-status.hidden {
+  display: none;
+}
+
+.map-status.error {
+  color: #8a5a5a;
+}
+
+.map-place-label {
+  min-width: 180px;
+  padding: 10px 12px;
+  color: #2f3b33;
+  font-family: "Gowun Batang", serif;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.map-place-label strong {
+  display: block;
+  margin-bottom: 3px;
+  font-size: 13px;
+}
+
+.map-place-label span {
+  display: block;
+  color: #5f6e63;
+  font-size: 11px;
+}
+
+@media (max-width: 360px) {
+  .map-stage {
+    height: 240px;
+  }
+
+  .map-tab {
+    font-size: 12px;
+  }
+}
+

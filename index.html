@@ -5,10 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta property="og:title" content="박지현 ♥ 조예진 결혼합니다" />
-  <meta
-  property="og:description"
-  content="2026년 10월 10일 토요일 오후 1시 30분 · W웨딩 목화웨딩컨벤션"
-/>
+  <meta property="og:description" content="2026년 10월 10일 토요일 오후 1시 30분 · W웨딩 목화웨딩컨벤션" />
   <title>박지현 ♥ 조예진 결혼합니다</title>
   <link rel="stylesheet" href="./main.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -39,10 +36,24 @@
       </div>
       <div class="title">We are getting married</div>
       <div class="wedding-img">
-        <img src="./images/main_bg.png" alt="bg" />
-        <img src="./images/Subtract.png" alt="테이프" class="tape tape1" />
-        <img src="./images/Subtract.png" alt="테이프" class="tape tape2" />
-      </div>
+  <img
+    src="./images/main_bg.png"
+    alt="웨딩 사진"
+    class="wedding-main-photo"
+  />
+
+  <img
+    src="./images/Subtract.png"
+    alt="테이프"
+    class="tape tape1"
+  />
+
+  <img
+    src="./images/Subtract.png"
+    alt="테이프"
+    class="tape tape2"
+  />
+</div>
       <div class="main-txt">
         <p>저희 두사람이 사랑으로 하나가 됩니다</p>
         <h2>jihyeon &amp; yejin</h2>
@@ -57,7 +68,7 @@
         <div class="txt-location">
           <i class="fa-solid fa-location-dot"></i>
           <h2>W웨딩 목화웨딩컨벤션</h2>
-          <p>부산 연제구 중앙대로 1125 시티타워 15층</p>
+          <p>부산 연제구 중앙대로 1125 시티타워 15층 밸리스홀</p>
         </div>
       </div>
       <div class="line line2">
@@ -78,19 +89,27 @@
         <div class="invitation-txt">
           <h2 class="txt-title">Invitation</h2>
           <p>
-            저희 두 사람이 처음 마주했던 순간, 서로가 서로에게<br />
-            뜻깊은 인연이자 약속임을 직감하였습니다. <br /><br />이제 그 소중한
-            믿음을 바탕으로 인생의 <br />새로운 길을 함께 걷고자 합니다. <br /><br />
-            오늘날 저희가 올바르게 자라 이토록 가슴 설레는 미래를<br />
-            꿈꿀 수 있게 된 것은 <br />오롯이 여러분들의 따뜻한 사랑 덕분입니다.<br /><br />
-            감사의 마음을 담아 첫걸음을 가다듬는 자리를 마련하였으니,<br />
-            부디 걸음 하시어 앞날을 격려와 축복으로 밝혀주시면<br />
+            저희 두 사람이 처음 마주했던 순간,<br />
+            서로가 서로에게 뜻깊은 인연이자<br />
+            약속임을 직감하였습니다.<br /><br />
+            이제 그 소중한 믿음을 바탕으로<br />
+            인생의 새로운 길을<br />
+            함께 걷고자 합니다. <br /><br />
+            오늘날 저희가 올바르게 자라<br />
+            이토록 가슴 설레는 미래를<br />
+            꿈꿀 수 있게 된 것은,<br />
+            오롯이 여러분들의<br />
+            따뜻한 사랑 덕분입니다.<br /><br />
+            감사의 마음을 담아<br />
+            첫걸음을 가다듬는 자리를 마련하였으니,<br />
+            부디 걸음 하시어<br />
+            앞날을 격려와 축복으로 밝혀주시면<br />
             더없는 기쁨으로 간직하겠습니다.
           </p>
         </div>
-      </div>
-      <div class="invitation-img">
+        <div class="invitation-img">
         <img src="./images/sec2-img.png" alt="캐릭터 이미지" />
+      </div>
       </div>
     </section>
 
@@ -114,29 +133,84 @@
           <h2 class="txt-title">Location</h2>
           <p>
             부산 연제구 중앙대로 1125 시티타워15층<br />
-            W웨딩 목화웨딩컨벤션
+            W웨딩 목화웨딩컨벤션 밸리스홀
           </p>
         </div>
         <div class="location-map">
-          <div class="map">지도들어갈 자리</div>
+          <div class="map-shell">
+            <div class="map-tabs" role="tablist" aria-label="지도 서비스 선택">
+              <button
+                class="map-tab active"
+                type="button"
+                role="tab"
+                aria-selected="true"
+                aria-controls="kakao-map"
+                data-map="kakao-map"
+              >
+                카카오맵
+              </button>
+              <button
+                class="map-tab"
+                type="button"
+                role="tab"
+                aria-selected="false"
+                aria-controls="naver-map"
+                data-map="naver-map"
+              >
+                네이버 지도
+              </button>
+            </div>
+
+            <div class="map-stage">
+              <div
+                id="kakao-map"
+                class="wedding-map active"
+                role="tabpanel"
+                aria-label="W웨딩 목화웨딩컨벤션 카카오 지도"
+              ></div>
+              <div
+                id="naver-map"
+                class="wedding-map"
+                role="tabpanel"
+                aria-label="W웨딩 목화웨딩컨벤션 네이버 지도"
+                hidden
+              ></div>
+              <p id="map-status" class="map-status" aria-live="polite">
+                예식장 지도를 불러오는 중입니다.
+              </p>
+            </div>
+          </div>
+
           <ul class="location-info">
             <li>
               <span>버스</span>
-              <p>29, 51, 179, 189 연산역 연산교차로 하차 도보 3분</p>
+              <p>29, 51, 179, 189 연산역·연산교차로 하차 후 도보 3분</p>
             </li>
             <li>
               <span>지하철</span>
-              <p>연산역 1호선, 3호선 하차 도보 5분</p>
+              <p>부산도시철도 1호선·3호선 연산역 하차 후 도보 5분</p>
             </li>
             <li>
               <span>주차</span>
               <p>건물 내 3시간 무료주차 / 건물 외 2시간 무료주차</p>
             </li>
           </ul>
+
           <ul class="map-list">
-            <li><a href="">네이버지도</a></li>
-            <li><a href="">카카오맵</a></li>
-            <li><a href="">T맵</a></li>
+            <li>
+              <a
+                href="https://map.naver.com/p/search/W%EC%9B%A8%EB%94%A9%20%EB%AA%A9%ED%99%94%EC%9B%A8%EB%94%A9%EC%BB%A8%EB%B2%A4%EC%85%98"
+                target="_blank"
+                rel="noopener noreferrer"
+              >네이버 지도에서 보기</a>
+            </li>
+            <li>
+              <a
+                href="https://map.kakao.com/link/search/W%EC%9B%A8%EB%94%A9%20%EB%AA%A9%ED%99%94%EC%9B%A8%EB%94%A9%EC%BB%A8%EB%B2%A4%EC%85%98"
+                target="_blank"
+                rel="noopener noreferrer"
+              >카카오맵에서 보기</a>
+            </li>
           </ul>
         </div>
       </div>
@@ -204,13 +278,13 @@
               <img src="./images/wedding_1.png" alt="img">
             </li>
             <li class="wedding-img-item">
-              <img src="./images/wedding_2.png" alt="img">
+              <img src="./images/wedding_17.png" alt="img">
             </li>
             <li class="wedding-img-item">
-              <img src="./images/wedding_3.png" alt="img">
+              <img src="./images/wedding_19.png" alt="img">
             </li>
             <li class="wedding-img-item">
-              <img src="./images/wedding_4.png" alt="img">
+              <img src="./images/wedding_10.png" alt="img">
             </li>
           </ul>
           <div class="txt-img">
@@ -220,16 +294,16 @@
         <div class="wedding-img-box wedding-img-box2">
           <ul class="wedding-img-list">
             <li class="wedding-img-item">
-              <img src="./images/wedding_5.png" alt="img">
+              <img src="./images/wedding_18.png" alt="img">
             </li>
             <li class="wedding-img-item">
-              <img src="./images/wedding_6.png" alt="img">
+              <img src="./images/wedding_2.png" alt="img">
             </li>
             <li class="wedding-img-item">
-              <img src="./images/wedding_7.png" alt="img">
+              <img src="./images/wedding_11.png" alt="img">
             </li>
             <li class="wedding-img-item">
-              <img src="./images/wedding_8.png" alt="img">
+              <img src="./images/wedding_20.png" alt="img">
             </li>
           </ul>
           <div class="txt-img">
@@ -239,16 +313,16 @@
         <div class="wedding-img-box wedding-img-box3">
           <ul class="wedding-img-list">
             <li class="wedding-img-item">
-              <img src="./images/wedding_9.png" alt="img">
+              <img src="./images/wedding_5.png" alt="img">
             </li>
             <li class="wedding-img-item">
-              <img src="./images/wedding_10.png" alt="img">
+              <img src="./images/wedding_8.png" alt="img">
             </li>
             <li class="wedding-img-item">
-              <img src="./images/wedding_11.png" alt="img">
+              <img src="./images/wedding_14.png" alt="img">
             </li>
             <li class="wedding-img-item">
-              <img src="./images/wedding_12.png" alt="img">
+              <img src="./images/wedding_16.png" alt="img">
             </li>
           </ul>
           <div class="txt-img">
@@ -273,61 +347,61 @@
               <img src="./images/wedding_1.png" alt="img">
             </li>
             <li class="img-popup-list">
-              <img src="./images/wedding_2.png" alt="img">
-            </li>
-            <li class="img-popup-list">
-              <img src="./images/wedding_3.png" alt="img">
-            </li>
-            <li class="img-popup-list">
-              <img src="./images/wedding_4.png" alt="img">
-            </li>
-            <li class="img-popup-list">
-              <img src="./images/wedding_5.png" alt="img">
-            </li>
-            <li class="img-popup-list">
-              <img src="./images/wedding_6.png" alt="img">
-            </li>
-            <li class="img-popup-list">
-              <img src="./images/wedding_7.png" alt="img">
-            </li>
-            <li class="img-popup-list">
-              <img src="./images/wedding_8.png" alt="img">
-            </li>
-            <li class="img-popup-list">
-              <img src="./images/wedding_9.png" alt="img">
-            </li>
-            <li class="img-popup-list">
-              <img src="./images/wedding_10.png" alt="img">
-            </li>
-            <li class="img-popup-list">
-              <img src="./images/wedding_11.png" alt="img">
-            </li>
-            <li class="img-popup-list">
-              <img src="./images/wedding_12.png" alt="img">
-            </li>
-            <li class="img-popup-list">
-              <img src="./images/wedding_13.png" alt="img">
-            </li>
-            <li class="img-popup-list">
-              <img src="./images/wedding_14.png" alt="img">
-            </li>
-            <li class="img-popup-list">
-              <img src="./images/wedding_15.png" alt="img">
-            </li>
-            <li class="img-popup-list">
-              <img src="./images/wedding_16.png" alt="img">
-            </li>
-            <li class="img-popup-list">
-              <img src="./images/wedding_17.png" alt="img">
-            </li>
-            <li class="img-popup-list">
               <img src="./images/wedding_18.png" alt="img">
             </li>
             <li class="img-popup-list">
               <img src="./images/wedding_19.png" alt="img">
             </li>
             <li class="img-popup-list">
+              <img src="./images/wedding_2.png" alt="img">
+            </li>
+            <li class="img-popup-list">
+              <img src="./images/wedding_6.png" alt="img">
+            </li>
+            <li class="img-popup-list">
+              <img src="./images/wedding_15.png" alt="img">
+            </li>
+            <li class="img-popup-list">
+              <img src="./images/wedding_11.png" alt="img">
+            </li>
+            <li class="img-popup-list">
+              <img src="./images/wedding_4.png" alt="img">
+            </li>
+            <li class="img-popup-list">
+              <img src="./images/wedding_14.png" alt="img">
+            </li>
+            <li class="img-popup-list">
+              <img src="./images/wedding_13.png" alt="img">
+            </li>
+            <li class="img-popup-list">
               <img src="./images/wedding_20.png" alt="img">
+            </li>
+            <li class="img-popup-list">
+              <img src="./images/wedding_16.png" alt="img">
+            </li>
+            <li class="img-popup-list">
+              <img src="./images/wedding_10.png" alt="img">
+            </li>
+            <li class="img-popup-list">
+              <img src="./images/wedding_7.png" alt="img">
+            </li>
+            <li class="img-popup-list">
+              <img src="./images/wedding_5.png" alt="img">
+            </li>
+            <li class="img-popup-list">
+              <img src="./images/wedding_8.png" alt="img">
+            </li>
+            <li class="img-popup-list">
+              <img src="./images/wedding_17.png" alt="img">
+            </li>
+            <li class="img-popup-list">
+              <img src="./images/wedding_12.png" alt="img">
+            </li>
+            <li class="img-popup-list">
+              <img src="./images/wedding_9.png" alt="img">
+            </li>
+            <li class="img-popup-list">
+              <img src="./images/wedding_3.png" alt="img">
             </li>
           </ul>
         </div>
@@ -360,9 +434,23 @@
             <div class="account-card">
               <div class="account-info">
                 <p class="account-name">박지현 (신랑)</p>
-                <p class="account-number">신한은행 110-123-456789</p>
+                <p class="account-number">농협 903081-56-010445</p>
               </div>
-              <button class="account-copy" type="button" data-copy="신한은행 110-123-456789">복사</button>
+              <button class="account-copy" type="button" data-copy="농협 903081-56-010445">복사</button>
+            </div>
+            <div class="account-card">
+              <div class="account-info">
+                <p class="account-name">박홍수 (부)</p>
+                <p class="account-number">농협 903081-52-006434</p>
+              </div>
+              <button class="account-copy" type="button" data-copy="농협 903081-52-006434">복사</button>
+            </div>
+            <div class="account-card">
+              <div class="account-info">
+                <p class="account-name">이정실 (모)</p>
+                <p class="account-number">농협 903081-52-012049</p>
+              </div>
+              <button class="account-copy" type="button" data-copy="농협 903081-52-012049">복사</button>
             </div>
           </div>
         </div>
@@ -377,9 +465,23 @@
             <div class="account-card">
               <div class="account-info">
                 <p class="account-name">조예진 (신부)</p>
-                <p class="account-number">우리은행 1002-123-456789</p>
+                <p class="account-number">국민은행 660401-01-837464</p>
               </div>
-              <button class="account-copy" type="button" data-copy="우리은행 1002-123-456789">복사</button>
+              <button class="account-copy" type="button" data-copy="KB국민은행 660401-01-837464">복사</button>
+            </div>
+            <div class="account-card">
+              <div class="account-info">
+                <p class="account-name">조용근 (부)</p>
+                <p class="account-number"></p>
+              </div>
+              <button class="account-copy" type="button" data-copy="">복사</button>
+            </div>
+            <div class="account-card">
+              <div class="account-info">
+                <p class="account-name">김혜란 (모)</p>
+                <p class="account-number">국민은행 196202-04-109169</p>
+              </div>
+              <button class="account-copy" type="button" data-copy="국민은행 196202-04-109169">복사</button>
             </div>
           </div>
         </div>
@@ -399,6 +501,124 @@
       <ul class="guestbook-list"></ul>
     </section> -->
 
+    <section class="notice" id="reception-notice">
+  
+<div class="notice-img">
+        <img src="./images/balloon.png" alt="balloon">
+      </div>
+      <h2 class="txt-title">Notice</h2>
+      <div class="notice-ornament" aria-hidden="true">
+    <span></span>
+  </div>
+  <h2 class="notice-main-title">신랑측 피로연 안내</h2>
+
+  <p class="notice-parents">혼주 박홍수 · 이정실</p>
+  <p class="notice-couple">
+    신랑  박 지 현 <span>&amp;</span> 신부  조 예 진
+  </p>
+
+  <p class="notice-message">
+    결혼식에 참석이 어려운 분들을 위해<br />
+    예식 전 따로 피로연을 준비했습니다.<br /><br />
+
+    새로운 시작의 순간, 귀한 발걸음 하시어<br />
+    두 사람의 앞날을 축복해주시면<br />
+    감사하겠습니다.
+  </p>
+
+  <div class="notice-detail">
+    <h3>피로연 일시<span>&amp;</span>장소</h3>
+    <p>2026년 9월 27일(일) 9시~19시까지</p>
+    <p>은하수가든 (서귀포시 표선면 중산간동로 5123)</p>
+  </div>
+
+  <div class="notice-map">
+    <div class="map-shell">
+      <div class="map-tabs" role="tablist" aria-label="피로연 지도 서비스 선택">
+        <button
+          class="map-tab active"
+          type="button"
+          role="tab"
+          aria-selected="true"
+          aria-controls="reception-kakao-map"
+          data-map="reception-kakao-map"
+        >
+          카카오맵
+        </button>
+
+        <button
+          class="map-tab"
+          type="button"
+          role="tab"
+          aria-selected="false"
+          aria-controls="reception-naver-map"
+          data-map="reception-naver-map"
+        >
+          네이버 지도
+        </button>
+      </div>
+
+      <div class="map-stage">
+        <div
+          id="reception-kakao-map"
+          class="wedding-map active"
+          role="tabpanel"
+          aria-label="은하수가든 카카오 지도"
+        ></div>
+
+        <div
+          id="reception-naver-map"
+          class="wedding-map"
+          role="tabpanel"
+          aria-label="은하수가든 네이버 지도"
+          hidden
+        ></div>
+
+        <p class="map-status" aria-live="polite">
+          피로연 장소 지도를 불러오는 중입니다.
+        </p>
+      </div>
+    </div>
+
+    <ul class="location-info notice-transport">
+      <li>
+        <span>버스</span>
+        <p>
+          222, 732-1, 732-2번 버스 이용<br />
+          가시리취락구조 정류장 하차
+        </p>
+      </li>
+
+      <li>
+        <span>자가</span>
+        <p>은하수가든 내 주차장 이용</p>
+      </li>
+    </ul>
+
+    <ul class="map-list">
+      <li>
+        <a
+          href="https://map.naver.com/p/search/%EC%9D%80%ED%95%98%EC%88%98%EA%B0%80%EB%93%A0%20%EC%84%9C%EA%B7%80%ED%8F%AC"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          네이버 지도에서 보기
+        </a>
+      </li>
+
+      <li>
+        <a
+          href="https://map.kakao.com/link/search/%EC%9D%80%ED%95%98%EC%88%98%EA%B0%80%EB%93%A0%20%EC%84%9C%EA%B7%80%ED%8F%AC"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          카카오맵에서 보기
+        </a>
+      </li>
+    </ul>
+  </div>
+</section>
+
     <section class="thankyou">
       <div class="thankyou-img">
         <img src="./images/leaf.png" alt="leaf">
@@ -409,11 +629,14 @@
         <span class="dia"></span>
       </div>
       <p class="thankyou-txt">
-        바쁘신 걸음 하시어 저희 두 사람의<br />
-        새로운 시작을 축복해 주셔서<br />
+        바쁘신 걸음 하시어<br />
+        저희 두 사람의 새로운 시작을<br />
+        축복해주셔서<br />
         진심으로 감사드립니다.<br /><br />
-        보내주신 따뜻한 마음 오래도록 간직하며<br />
-        늘 행복하게 살아가는 모습으로 보답하겠습니다.
+        보내주신 따뜻한 마음<br />
+        오래도록 간직하며<br />
+        늘 행복하게 살아가는 모습으로<br />
+        보답하겠습니다.
       </p>
       <div class="thankyou-sign">
         <p class="thankyou-names">
@@ -430,6 +653,11 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/MotionPathPlugin.min.js"></script>
+
+  <!-- 지도 SDK: 브라우저에서는 공개용 Client ID / JavaScript 키만 사용합니다. -->
+  <script src="https://oapi.map.naver.com/openapi/v3/maps.js?ncpKeyId=fist8wuup5&submodules=geocoder"></script>
+  <script src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=da44f63d257553c15e7503825f8f492f&libraries=services"></script>
+
   <script src="./main.js"></script>
 </body>
 
